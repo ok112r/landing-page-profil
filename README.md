@@ -10,9 +10,9 @@ Landing page profil pribadi profesional dan responsif berbasis HTML5 dan Tailwin
 2. **Tentang Saya (About Me):**
    - Latar belakang pendidikan di D3 Teknologi Informasi, Politeknik Negeri Madiun.
    - Penjelasan fokus minat pada sistem IoT dan aplikasi web monitoring.
-3. **Keahlian & Pengalaman Magang (Skills & Portfolio):**
+3. **Keahlian & Portofolio Proyek (Skills & Portfolio):**
    - 6 Badge keahlian utama: HTML5, CSS3, JavaScript, C++, Firebase, Database.
-   - 4 Kartu proyek nyata selama magang di startup IoT AM Technology Jogja.
+   - 4 Kartu proyek IoT, Otomasi & Simulasi (Praktikum Soil Moisture, Smart Ride Mode Throttle, Sistem Pendeteksi Benda Tunanetra bersama AM TECHNOLOGY Jogja, dan Monitoring Jadwal Sholat ESP32 Server).
 4. **Kontak & Call to Action (CTA WhatsApp):**
    - Tombol mencolok di bagian bawah dengan icon WhatsApp interaktif.
    - Terintegrasi tautan resmi WhatsApp Click-to-Chat: `https://wa.me/6288210921402?text=...`.
