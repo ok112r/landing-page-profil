@@ -17,12 +17,13 @@ Landing page profil pribadi profesional berbasis **Cyber-Physical IoT & Automati
      - **Tombol Toggle LED D2:** Pengunjung dapat menyalakan/mematikan lampu indikator mikrokontroler dengan efek visual dan audio.
      - **Tombol Test Buzzer:** Menguji suara alarm frekuensi tinggi (1.4 kHz).
 
-3. **Proyek IoT, Otomasi & Simulasi (Filterable & Interactive):**
+3. **Proyek IoT, Otomasi & Simulasi (Penjelasan Teknis Komprehensif):**
    - Filter tab kategori (*Semua*, *ESP32 & Sensor*, *Smart Otomotif*, *Assistive Tech*).
-   - **Proyek 1:** *LAPORAN PRAKTIKUM SENSOR KELEMBAPAN TANAH MENGGUNAKAN SENSOR SOIL MOISTURE* (dengan simulasi notifikasi bot Telegram).
-   - **Proyek 2:** *RANCANG BANGUN SMART RIDE MODE SYSTEM BERBASIS MICROKONTROLER UNTUK OPTIMASI RESPON THROTTLE MOTOR LISTRIK* (dilengkapi **Interactive Ride Mode Switcher**: tombol Race, Normal, dan Rain yang dapat diklik pengunjung dengan respons kecepatan dan akselerasi langsung berubah).
-   - **Proyek 3:** *Sistem pendeteksi benda untuk orang buta dengan sensor lidar dan buzzer* (kolaborasi bersama AM TECHNOLOGY Jogja dengan kartu telemetri frekuensi LiDAR).
-   - **Proyek 4:** *Rangkaian monitoring jadwal sholat mushola berbasis web dengan esp32 sebagai server* (terintegrasi **Jam Digital Real-Time WIB** dan jadwal sholat).
+   - Fokus murni pada penjelasan teknis, alur sistem, arsitektur perangkat, dan pemecahan masalah nyata:
+     - **Proyek 1:** *LAPORAN PRAKTIKUM SENSOR KELEMBAPAN TANAH MENGGUNAKAN SENSOR SOIL MOISTURE* (Akuisisi analog, otomasi pompa relai, peringatan alarm lokal & bot Telegram).
+     - **Proyek 2:** *RANCANG BANGUN SMART RIDE MODE SYSTEM BERBASIS MICROKONTROLER UNTUK OPTIMASI RESPON THROTTLE MOTOR LISTRIK* (Logika kendali 3-mode: Race, Normal, Rain, dan simulasi Wokwi).
+     - **Proyek 3:** *Sistem pendeteksi benda untuk orang buta dengan sensor lidar dan buzzer* (Kolaborasi industri bersama AM TECHNOLOGY Jogja, pemindaian optik LiDAR dan feedback akustik buzzer).
+     - **Proyek 4:** *Rangkaian monitoring jadwal sholat mushola berbasis web dengan esp32 sebagai server* (Arsitektur web server ESP32 lokal, sinkronisasi online, integrasi Smart TV/LCD, perancangan layout PCB).
 
 4. **Tech Arsenal & Ekosistem Kerja:**
    - Pembagian sistematis: *Embedded & IoT*, *Web Monitoring Dashboard*, dan *Cloud & Integrasi Telemetri*.
