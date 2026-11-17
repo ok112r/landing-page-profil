@@ -1,32 +1,49 @@
-# Landing Page Profil Pribadi - Yogo Prasetyo
+# Landing Page Profil Interaktif - Yogo Prasetyo
 
-Landing page profil pribadi profesional dan responsif berbasis HTML5 dan Tailwind CSS. Dibuat untuk memenuhi tugas individu Digital Kewirausahaan IT.
+Landing page profil pribadi profesional berbasis **Cyber-Physical IoT & Automation Lab Theme** dengan HTML5, Tailwind CSS, Google Fonts (*Plus Jakarta Sans* & *JetBrains Mono*), dan Web Audio API. Dibuat khusus untuk menampilkan keahlian nyata dalam rekayasa sistem *Internet of Things* (IoT) dan pemenuhan tugas individu **Digital Kewirausahaan IT**.
 
-## Fitur Halaman
-1. **Header / Hero Section:**
-   - Nama lengkap & julukan (*IoT Enthusiast & Junior Web Developer*).
-   - Ringkasan singkat profil (1–2 kalimat).
-   - Foto profil / avatar representatif.
-2. **Tentang Saya (About Me):**
-   - Latar belakang pendidikan di D3 Teknologi Informasi, Politeknik Negeri Madiun.
-   - Penjelasan fokus minat pada sistem IoT dan aplikasi web monitoring.
-3. **Keahlian & Portofolio Proyek (Skills & Portfolio):**
-   - 6 Badge keahlian utama: HTML5, CSS3, JavaScript, C++, Firebase, Database.
-   - 4 Kartu proyek IoT, Otomasi & Simulasi (Praktikum Soil Moisture, Smart Ride Mode Throttle, Sistem Pendeteksi Benda Tunanetra bersama AM TECHNOLOGY Jogja, dan Monitoring Jadwal Sholat ESP32 Server).
-4. **Kontak & Call to Action (CTA WhatsApp):**
-   - Tombol mencolok di bagian bawah dengan icon WhatsApp interaktif.
-   - Terintegrasi tautan resmi WhatsApp Click-to-Chat: `https://wa.me/6288210921402?text=...`.
+---
+
+## Fitur Unggulan & Interaktivitas Halaman
+
+1. **Top Telemetry Ticker Ribbon:**
+   - Menampilkan status langsung *NODE-01: ONLINE (ESP32)*, nilai suhu, kadar kelembapan tanah, latensi ping jaringan, dan status sinyal Wi-Fi yang berfluktuasi secara real-time.
+   - Tombol toggle efek audio *Web Audio API* (On/Off).
+
+2. **Hero Section dengan Interactive ESP32 Microcontroller Deck:**
+   - Efek pengetikan dinamis (*typing animation*) keahlian (*Firmware Engineer*, *IoT Systems*, dll.).
+   - Modul simulator mikrokontroler interaktif di sisi kanan:
+     - **Slider Kelembapan Tanah:** Menggeser kadar air tanah di bawah 40% akan langsung memicu peringatan kritis, status pompa air otomatis menyala, dan alarm buzzer aktif.
+     - **Tombol Toggle LED D2:** Pengunjung dapat menyalakan/mematikan lampu indikator mikrokontroler dengan efek visual dan audio.
+     - **Tombol Test Buzzer:** Menguji suara alarm frekuensi tinggi (1.4 kHz).
+
+3. **Proyek IoT, Otomasi & Simulasi (Filterable & Interactive):**
+   - Filter tab kategori (*Semua*, *ESP32 & Sensor*, *Smart Otomotif*, *Assistive Tech*).
+   - **Proyek 1:** *LAPORAN PRAKTIKUM SENSOR KELEMBAPAN TANAH MENGGUNAKAN SENSOR SOIL MOISTURE* (dengan simulasi notifikasi bot Telegram).
+   - **Proyek 2:** *RANCANG BANGUN SMART RIDE MODE SYSTEM BERBASIS MICROKONTROLER UNTUK OPTIMASI RESPON THROTTLE MOTOR LISTRIK* (dilengkapi **Interactive Ride Mode Switcher**: tombol Race, Normal, dan Rain yang dapat diklik pengunjung dengan respons kecepatan dan akselerasi langsung berubah).
+   - **Proyek 3:** *Sistem pendeteksi benda untuk orang buta dengan sensor lidar dan buzzer* (kolaborasi bersama AM TECHNOLOGY Jogja dengan kartu telemetri frekuensi LiDAR).
+   - **Proyek 4:** *Rangkaian monitoring jadwal sholat mushola berbasis web dengan esp32 sebagai server* (terintegrasi **Jam Digital Real-Time WIB** dan jadwal sholat).
+
+4. **Tech Arsenal & Ekosistem Kerja:**
+   - Pembagian sistematis: *Embedded & IoT*, *Web Monitoring Dashboard*, dan *Cloud & Integrasi Telemetri*.
+
+5. **Tentang Saya & Latar Belakang:**
+   - Informasi akademik di D3 Teknologi Informasi, Politeknik Negeri Madiun, serta pengalaman magang di startup IoT AM TECHNOLOGY Jogja.
+
+6. **Interactive WhatsApp Message Builder (Call to Action):**
+   - Pengunjung dapat memilih topik diskusi (Proyek IoT, Web Dashboard, Peluang Kerja, atau Santai).
+   - Pengunjung dapat mengetik nama/instansi mereka.
+   - Preview pesan terformat otomatis secara real-time dan langsung terhubung ke tautan resmi WhatsApp Click-to-Chat `+62 882-1092-1402`.
+   - Tombol *Salin Nomor* dengan feedback interaktif instan.
 
 ---
 
 ## Cara Membuka / Preview di Laptop
-Cukup klik ganda file `index.html` untuk langsung membukanya di browser (Google Chrome, Microsoft Edge, dll.).
+Cukup klik ganda file `index.html` untuk langsung membukanya di browser (Google Chrome, Microsoft Edge, Mozilla Firefox, dll.).
 
 ---
 
 ## Cara Mendapatkan Link Publik (Untuk Dikumpulkan di Spreadsheet)
-
-Pilih salah satu cara termudah berikut:
 
 ### Opsi 1: Netlify Drop (Paling Cepat & Tanpa Koding, ±10 Detik)
 1. Buka browser dan kunjungi: [https://app.netlify.com/drop](https://app.netlify.com/drop)
@@ -34,12 +51,7 @@ Pilih salah satu cara termudah berikut:
 3. Dalam hitungan detik, Netlify akan memberikan URL publik (misal: `https://yogo-portfolio.netlify.app`).
 4. Salin link tersebut dan masukkan ke spreadsheet tugas Anda.
 
-### Opsi 2: Vercel
-1. Kunjungi [https://vercel.com](https://vercel.com).
-2. Hubungkan akun GitHub atau upload folder proyek.
-3. Dapatkan domain gratis seperti `https://landing-page-yogo.vercel.app`.
-
-### Opsi 3: GitHub Pages
+### Opsi 2: GitHub Pages
 1. Buat repository baru di GitHub bernama `landing-page-profil`.
 2. Push repository lokal ini:
    ```bash
