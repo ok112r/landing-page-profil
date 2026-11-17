@@ -1,6 +1,6 @@
 # Landing Page Profil Interaktif - Yogo Prasetyo
 
-Landing page profil pribadi profesional berbasis **Cyber-Physical IoT & Automation Lab Theme** dengan HTML5, Tailwind CSS, Google Fonts (*Plus Jakarta Sans* & *JetBrains Mono*), dan Web Audio API. Dibuat khusus untuk menampilkan keahlian nyata dalam rekayasa sistem *Internet of Things* (IoT) dan pemenuhan tugas individu **Digital Kewirausahaan IT**.
+Landing page profil pribadi profesional bertema kontras tinggi **Cyber Yellow & Pitch Black (Kuning & Hitam)** berbasis HTML5, Tailwind CSS, Google Fonts (*Plus Jakarta Sans* & *JetBrains Mono*), dan Web Audio API. Dibuat khusus untuk menampilkan keahlian nyata dalam rekayasa sistem *Internet of Things* (IoT) dan pemenuhan tugas individu **Digital Kewirausahaan IT**.
 
 ---
 
