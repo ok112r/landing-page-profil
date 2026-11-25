@@ -1,62 +1,72 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yogo Prasetyo | IoT Systems & Fullstack Automation Engineer</title>
-  <meta name="description"
-    content="Portofolio Interaktif Yogo Prasetyo - D3 Teknologi Informasi Politeknik Negeri Madiun. Rekayasa perangkat IoT, firmware ESP32, otomasi sensor telemetri, dan antarmuka web monitoring modern.">
+  <title>Yogo Prasetyo — Solusi Sistem IoT & Website Cerdas</title>
+  <meta name="description" content="Jasa perancangan perangkat mikrokontroler (ESP32, Arduino, Raspberry Pi), otomasi sensor real-time, dan pembuatan website & dashboard monitoring modern oleh Yogo Prasetyo.">
+  
+  <!-- Favicon Icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%200%20100%20100%22><rect width=%22100%22 height=%22100%22 rx=%2226%22 fill=%22%238FA18E%22/><path d=%22M50 18 L50 42 M50 58 L50 82 M18 50 L42 50 M58 50 L82 50 M32 32 L40 40 M68 68 L60 60 M68 32 L60 40 M32 68 L40 60%22 stroke=%22white%22 stroke-width=%226%22 stroke-linecap=%22round%22/><circle cx=%2250%22 cy=%2250%22 r=%2212%22 fill=%22%23E57E51%22/></svg>">
 
-  <!-- Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Font Awesome 6.5.1 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
+          colors: {
+            cream: {
+              DEFAULT: '#F5F3EE',
+              50: '#FAF8F5',
+              100: '#F5F3EE',
+              200: '#EAE5D9',
+              300: '#DED6C4',
+            },
+            sage: {
+              DEFAULT: '#8FA18E',
+              soft: '#DCE3DA',
+              light: '#EDF2EC',
+              dark: '#5E745D',
+              deep: '#2D382C',
+            },
+            terracotta: {
+              DEFAULT: '#E57E51',
+              hover: '#D26B3E',
+              dark: '#B85529',
+              light: '#FCEFE9',
+              subtle: '#FFF7F2',
+            },
+            charcoal: {
+              DEFAULT: '#2B302C',
+              muted: '#3D443E',
+            },
+            'sage-gray': '#5A635C',
+          },
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'monospace'],
           },
-          colors: {
-            black: {
-              DEFAULT: '#000000',
-              pure: '#000000',
-              950: '#060606',
-              900: '#0c0c0c',
-              850: '#121212',
-              800: '#1a1a1a',
-              750: '#222222',
-              700: '#2c2c2c',
-            },
-            yellow: {
-              300: '#fde047',
-              400: '#facc15',
-              500: '#eab308',
-              600: '#ca8a04',
-              950: '#322003',
-            }
+          borderRadius: {
+            '4xl': '2rem',
+            '5xl': '2.5rem',
           },
-          animation: {
-            'pulse-fast': 'pulse 1.2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-            'float-slow': 'float 5s ease-in-out infinite',
-          },
-          keyframes: {
-            float: {
-              '0%, 100%': { transform: 'translateY(0px)' },
-              '50%': { transform: 'translateY(-8px)' },
-            }
+          boxShadow: {
+            'soft': '0 10px 30px -5px rgba(43, 48, 44, 0.05)',
+            'card': '0 12px 35px -8px rgba(90, 99, 92, 0.1)',
+            'warm': '0 15px 35px -5px rgba(229, 126, 81, 0.25)',
+            'sage': '0 20px 40px -10px rgba(143, 161, 142, 0.35)',
           }
         }
       }
@@ -64,1264 +74,1459 @@
   </script>
 
   <style>
-    /* High-Contrast Cyber Yellow & Pitch Black Grid */
-    body {
-      background-color: #000000;
-      background-image:
-        radial-gradient(rgba(250, 204, 21, 0.08) 1px, transparent 1px),
-        radial-gradient(rgba(234, 179, 8, 0.04) 1px, transparent 1px);
-      background-size: 32px 32px, 64px 64px;
-      background-position: 0 0, 16px 16px;
+    /* Custom Organic Curves & Aesthetic Adjustments */
+    ::selection {
+      background-color: #8FA18E;
+      color: #ffffff;
     }
-
-    /* Glow utilities for Yellow & Black Theme */
-    .glow-yellow {
-      box-shadow: 0 0 30px -5px rgba(250, 204, 21, 0.35);
-    }
-
-    .glow-card {
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .glow-card:hover {
-      box-shadow: 0 10px 35px -10px rgba(250, 204, 21, 0.22);
-      border-color: rgba(250, 204, 21, 0.5);
-    }
-
-    /* Hardware Pin Styling */
-    .pin-socket {
-      background: repeating-linear-gradient(90deg, #222222, #222222 4px, #000000 4px, #000000 8px);
-    }
-
-    /* Custom Scrollbar */
+    
+    /* Smooth Scrollbar */
     ::-webkit-scrollbar {
-      width: 8px;
+      width: 10px;
     }
-
     ::-webkit-scrollbar-track {
-      background: #000000;
+      background: #F5F3EE;
     }
-
     ::-webkit-scrollbar-thumb {
-      background: #222222;
-      border-radius: 4px;
+      background: #8FA18E;
+      border-radius: 9999px;
+      border: 2px solid #F5F3EE;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #5E745D;
     }
 
-    ::-webkit-scrollbar-thumb:hover {
-      background: #facc15;
+    /* Subtle Organic Pattern Overlay */
+    .bg-grid-pattern {
+      background-size: 28px 28px;
+      background-image: 
+        radial-gradient(circle, rgba(143, 161, 142, 0.18) 1px, transparent 1px);
+    }
+
+    /* Glow and pulse effects */
+    @keyframes subtlePulse {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.04); opacity: 1; }
+    }
+    .animate-subtle-pulse {
+      animation: subtlePulse 4s ease-in-out infinite;
+    }
+
+    /* Hardware schematic accent lines */
+    .circuit-line {
+      stroke-dasharray: 6 4;
+      animation: dash 20s linear infinite;
+    }
+    @keyframes dash {
+      to {
+        stroke-dashoffset: -100;
+      }
     }
   </style>
 </head>
+<body class="bg-[#F5F3EE] text-charcoal font-sans antialiased selection:bg-sage selection:text-white relative overflow-x-hidden min-h-screen">
 
-<body
-  class="text-neutral-200 font-sans selection:bg-yellow-400 selection:text-black min-h-screen relative overflow-x-hidden">
+  <!-- ============================================================ -->
+  <!-- NAVBAR -->
+  <!-- ============================================================ -->
+  <header class="sticky top-0 z-50 bg-[#F5F3EE]/90 backdrop-blur-md border-b border-[#E7E2D8] transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo Brand (Kiri) -->
+        <a href="#" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-sage rounded-xl p-1">
+          <div class="w-11 h-11 rounded-2xl bg-sage flex items-center justify-center text-white shadow-sm group-hover:bg-sage-dark group-hover:scale-105 transition-all duration-300 relative overflow-hidden">
+            <!-- Minimalist circuit / bolt icon -->
+            <i data-lucide="cpu" class="w-6 h-6 text-white stroke-[2.2]"></i>
+            <span class="absolute -top-1 -right-1 w-3 h-3 bg-terracotta rounded-full border-2 border-[#F5F3EE]"></span>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-extrabold text-lg sm:text-xl tracking-tight text-charcoal flex items-center gap-1.5">
+              Yogo Prasetyo
+              <span class="inline-block w-2 h-2 rounded-full bg-terracotta"></span>
+            </span>
+            <span class="font-mono text-[11px] font-medium tracking-wider uppercase text-sage-gray">
+              IoT &amp; Web Automation Lab
+            </span>
+          </div>
+        </a>
 
-  <!-- ==================== 1. TOP LIVE TELEMETRY TICKER BAR ==================== -->
-  <div
-    class="bg-black-900/95 border-b border-black-800 text-[11px] font-mono py-1.5 px-4 backdrop-blur-md sticky top-0 z-50">
-    <div
-      class="max-w-7xl mx-auto flex items-center justify-between gap-4 overflow-x-auto whitespace-nowrap scrollbar-none">
+        <!-- Menu Navigasi Tengah (Desktop) -->
+        <nav class="hidden md:flex items-center gap-1 lg:gap-2 bg-white/70 py-1.5 px-3 rounded-full border border-[#E5E0D4] shadow-sm">
+          <a href="#layanan" class="px-4 py-2 rounded-full text-sm font-semibold text-charcoal hover:text-terracotta hover:bg-[#F5F3EE] transition-all">Layanan</a>
+          <a href="#portofolio" class="px-4 py-2 rounded-full text-sm font-semibold text-charcoal hover:text-terracotta hover:bg-[#F5F3EE] transition-all">Portofolio</a>
+          <a href="#keahlian" class="px-4 py-2 rounded-full text-sm font-semibold text-charcoal hover:text-terracotta hover:bg-[#F5F3EE] transition-all">Keahlian</a>
+          <a href="#tentang-saya" class="px-4 py-2 rounded-full text-sm font-semibold text-charcoal hover:text-terracotta hover:bg-[#F5F3EE] transition-all">Tentang Saya</a>
+          <a href="#kontak" class="px-4 py-2 rounded-full text-sm font-semibold text-charcoal hover:text-terracotta hover:bg-[#F5F3EE] transition-all">Kontak</a>
+        </nav>
 
-      <!-- Left: Node Status -->
-      <div class="flex items-center gap-3">
-        <span
-          class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-yellow-950/60 border border-yellow-500/40 text-yellow-400 font-bold tracking-wider">
-          <span class="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-ping"></span>
-          NODE-01: ONLINE
+        <!-- Kanan: Tombol CTA Terracotta Desktop & Mobile Toggle -->
+        <div class="flex items-center gap-3">
+          <a href="#kontak" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-terracotta hover:bg-terracotta-hover text-white text-sm font-bold shadow-warm hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200">
+            <i data-lucide="message-square" class="w-4 h-4"></i>
+            <span>Konsultasi Gratis</span>
+          </a>
+
+          <!-- Hamburger Button (Mobile) -->
+          <button id="mobileMenuBtn" aria-label="Buka Menu Navigasi" class="md:hidden w-11 h-11 flex items-center justify-center rounded-2xl bg-white border border-[#E0DCD1] text-charcoal hover:bg-[#ECE8DF] focus:outline-none transition">
+            <i data-lucide="menu" id="menuOpenIcon" class="w-6 h-6"></i>
+            <i data-lucide="x" id="menuCloseIcon" class="w-6 h-6 hidden"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-[#E7E2D8] bg-[#FAF8F5]/98 px-6 py-6 shadow-xl space-y-3 transition-all duration-300">
+      <nav class="flex flex-col space-y-2">
+        <a href="#layanan" class="mobile-nav-link px-4 py-2.5 rounded-xl font-semibold text-charcoal hover:bg-sage-soft/40 transition">Layanan</a>
+        <a href="#portofolio" class="mobile-nav-link px-4 py-2.5 rounded-xl font-semibold text-charcoal hover:bg-sage-soft/40 transition">Portofolio</a>
+        <a href="#keahlian" class="mobile-nav-link px-4 py-2.5 rounded-xl font-semibold text-charcoal hover:bg-sage-soft/40 transition">Keahlian</a>
+        <a href="#tentang-saya" class="mobile-nav-link px-4 py-2.5 rounded-xl font-semibold text-charcoal hover:bg-sage-soft/40 transition">Tentang Saya</a>
+        <a href="#kontak" class="mobile-nav-link px-4 py-2.5 rounded-xl font-semibold text-charcoal hover:bg-sage-soft/40 transition">Kontak & WhatsApp</a>
+      </nav>
+      <div class="pt-3 border-t border-[#E8E3D7]">
+        <a href="#kontak" class="mobile-nav-link flex items-center justify-center gap-2 w-full py-3 rounded-full bg-terracotta text-white font-bold text-center shadow-warm">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          Konsultasi WhatsApp Sekarang
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ============================================================ -->
+  <!-- HERO SECTION (2 Kolom + Aksen Kurva Sage Green) -->
+  <!-- ============================================================ -->
+  <section class="relative pt-8 pb-16 lg:pt-14 lg:pb-24 overflow-hidden">
+    
+    <!-- Organic Background Blobs / Curves -->
+    <div class="absolute top-0 right-0 -mr-24 -mt-20 w-[480px] h-[480px] lg:w-[620px] lg:h-[620px] bg-sage-soft/55 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    <div class="absolute top-1/2 left-0 -ml-28 w-[380px] h-[380px] bg-sage/10 rounded-full blur-2xl pointer-events-none -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Kolom Kiri: Teks & CTA -->
+        <div class="lg:col-span-7 flex flex-col items-start space-y-6">
+          
+          <!-- Badge Kampus & Keahlian -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white border border-[#DDD8CB] shadow-sm">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+            <span class="font-mono text-xs font-semibold text-charcoal tracking-tight">
+              D3 Teknologi Informasi <span class="text-sage mx-1">•</span> Politeknik Negeri Madiun
+            </span>
+          </div>
+
+          <!-- Headline Utama -->
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-extrabold tracking-tight text-charcoal leading-[1.18]">
+            Solusi Sistem <span class="relative inline-block text-sage-dark underline decoration-terracotta/60 decoration-wavy decoration-2">IoT</span> &amp; <span class="text-terracotta">Website Cerdas</span> untuk Kebutuhan Anda
+          </h1>
+
+          <!-- Sub-headline -->
+          <p class="text-base sm:text-lg text-sage-gray leading-relaxed max-w-2xl font-normal">
+            Jasa perancangan perangkat mikrokontroler (ESP32, Arduino, Raspberry Pi), otomasi sensor real-time, hingga pembuatan website &amp; dashboard monitoring modern.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-2 w-full sm:w-auto">
+            <a href="#layanan" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-terracotta hover:bg-terracotta-hover text-white font-bold text-base shadow-warm hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200">
+              <span>Lihat Layanan</span>
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+            <a href="#portofolio" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-transparent hover:bg-white text-charcoal font-bold text-base border-2 border-[#D7D1C3] hover:border-charcoal transition-all duration-200">
+              <i data-lucide="folder-git-2" class="w-4 h-4 text-sage-dark"></i>
+              <span>Lihat Portofolio</span>
+            </a>
+          </div>
+
+          <!-- 3 Horizontal Badges with Circle Icons -->
+          <div class="pt-6 border-t border-[#E4DEC9]/90 grid grid-cols-1 sm:grid-cols-3 gap-3 w-full">
+            
+            <div class="flex items-center gap-3 p-3 rounded-2xl bg-white/70 border border-[#E6E1D4]">
+              <div class="w-9 h-9 rounded-full bg-sage-soft flex items-center justify-center text-sage-deep shrink-0">
+                <i data-lucide="cpu" class="w-4 h-4"></i>
+              </div>
+              <span class="text-xs font-semibold text-charcoal leading-tight">
+                Hardware &amp; Firmware Custom
+              </span>
+            </div>
+
+            <div class="flex items-center gap-3 p-3 rounded-2xl bg-white/70 border border-[#E6E1D4]">
+              <div class="w-9 h-9 rounded-full bg-sage-soft flex items-center justify-center text-sage-deep shrink-0">
+                <i data-lucide="activity" class="w-4 h-4"></i>
+              </div>
+              <span class="text-xs font-semibold text-charcoal leading-tight">
+                Web Dashboard Real-Time
+              </span>
+            </div>
+
+            <div class="flex items-center gap-3 p-3 rounded-2xl bg-white/70 border border-[#E6E1D4]">
+              <div class="w-9 h-9 rounded-full bg-sage-soft flex items-center justify-center text-sage-deep shrink-0">
+                <i data-lucide="briefcase" class="w-4 h-4"></i>
+              </div>
+              <span class="text-xs font-semibold text-charcoal leading-tight">
+                Magang Industri (AM TECHNOLOGY)
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Kolom Kanan: Foto Profil & Aksen Kurva Organik -->
+        <div class="lg:col-span-5 relative flex justify-center">
+          
+          <!-- Backing SVG Organic Shape in Sage -->
+          <div class="absolute inset-0 -m-4 lg:-m-6 bg-gradient-to-tr from-sage to-sage-soft rounded-[3rem] transform rotate-3 -z-10 shadow-sage opacity-85"></div>
+          
+          <!-- Foto Profil Wrapper -->
+          <div class="relative w-full max-w-sm sm:max-w-md rounded-3xl bg-white p-3 sm:p-4 shadow-xl border-4 border-white overflow-visible group">
+            
+            <div class="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-[#ECE8DF] flex items-center justify-center">
+              <!-- Actual User Photo with Fallback Image -->
+              <img 
+                src="foto-profil.jpeg" 
+                alt="Foto Profil Yogo Prasetyo" 
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534972195531-a756b1126f25?auto=format&fit=crop&w=800&q=80';"
+              />
+              
+              <!-- Subtle gradient overlay at bottom of photo -->
+              <div class="absolute inset-0 bg-gradient-to-t from-charcoal/50 via-transparent to-transparent opacity-60"></div>
+
+              <!-- Tech Tag di atas foto -->
+              <div class="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-charcoal/80 backdrop-blur-md text-white font-mono text-[11px]">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                ESP32 • Firebase • Tailwind
+              </div>
+            </div>
+
+            <!-- Floating Badge Kanan Bawah: "100% Custom & Siap Pakai" -->
+            <div class="absolute -bottom-5 -right-3 sm:-right-5 bg-white py-2.5 px-4 rounded-full shadow-lg border border-[#E2DDD0] flex items-center gap-2.5 animate-subtle-pulse">
+              <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
+                <i data-lucide="check-check" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <p class="text-xs font-extrabold text-charcoal leading-none">100% Custom</p>
+                <p class="text-[11px] font-medium text-sage-gray mt-0.5">&amp; Siap Langsung Pakai</p>
+              </div>
+            </div>
+
+            <!-- Floating Badge Kiri Bawah: Status Terbuka Proyek -->
+            <div class="absolute -top-3 -left-3 sm:-left-5 bg-white/95 backdrop-blur-sm py-2 px-3.5 rounded-full shadow-md border border-[#E2DDD0] flex items-center gap-2">
+              <span class="flex h-2.5 w-2.5 relative">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+              </span>
+              <span class="text-xs font-bold text-charcoal">Siap Terima Proyek Baru</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- SECTION C: KEUNGGULAN / TECH ARSENAL (4 Kolom Horizontal) -->
+  <!-- ============================================================ -->
+  <section id="keahlian" class="py-16 bg-[#EDE8DE]/70 relative border-y border-[#E2DDD0]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Heading -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="font-mono text-xs font-bold uppercase tracking-wider text-sage-dark bg-white px-3 py-1 rounded-full border border-[#D5CFBF]">
+          TECH ARSENAL &amp; SPESIALISASI
         </span>
-        <span class="text-neutral-400 hidden sm:inline">ESP32-CORE @ 240MHz</span>
-        <span class="text-neutral-700">|</span>
-        <span class="text-neutral-300">WIFI: <span class="text-yellow-400 font-semibold" id="ticker-wifi">-54
-            dBm</span></span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-charcoal mt-3 tracking-tight">
+          Fondasi Rekayasa Perangkat Lunak &amp; Keras
+        </h2>
+        <p class="text-sm sm:text-base text-sage-gray mt-2">
+          Perpaduan keahlian low-level hardware programming dan pengembangan website modern berkinerja tinggi.
+        </p>
       </div>
 
-      <!-- Center / Right: Live Fluctuating Telemetry Values -->
-      <div class="flex items-center gap-4 text-neutral-400">
-        <div>TEMP: <span class="text-yellow-400 font-bold" id="ticker-temp">28.4°C</span></div>
-        <div>SOIL MOISTURE: <span class="text-yellow-300 font-bold" id="ticker-soil">62%</span></div>
-        <div>PING: <span class="text-yellow-400 font-bold" id="ticker-ping">18ms</span></div>
+      <!-- 4 Kolom Keunggulan -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Card 1: Embedded & IoT -->
+        <div class="bg-white rounded-3xl p-6 shadow-sm border border-[#E5E0D2] hover:shadow-card hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-sage-soft text-sage-deep flex items-center justify-center mb-5 group-hover:bg-sage group-hover:text-white transition-colors duration-300">
+              <i data-lucide="cpu" class="w-7 h-7 stroke-[2]"></i>
+            </div>
+            <h3 class="text-lg font-bold text-charcoal mb-2.5 group-hover:text-terracotta transition-colors">
+              1. Embedded &amp; IoT
+            </h3>
+            <p class="text-sm text-sage-gray leading-relaxed">
+              ESP32, ESP8266, Arduino Nano, Raspberry Pi, sensor Soil Moisture &amp; LiDAR, hingga desain PCB.
+            </p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-[#F0EBE1] flex flex-wrap gap-1.5 font-mono text-[11px] text-sage-deep">
+            <span class="bg-[#F5F3EE] px-2 py-0.5 rounded-md">ESP32</span>
+            <span class="bg-[#F5F3EE] px-2 py-0.5 rounded-md">Arduino</span>
+            <span class="bg-[#F5F3EE] px-2 py-0.5 rounded-md">LiDAR</span>
+            <span class="bg-[#F5F3EE] px-2 py-0.5 rounded-md">PCB</span>
+          </div>
+        </div>
 
-        <!-- Audio FX Toggle Button -->
-        <button id="sound-toggle-btn"
-          class="flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-black-800 hover:bg-black-750 text-neutral-300 text-[10px] transition-colors border border-black-700">
-          <i class="fa-solid fa-volume-xmark text-yellow-400" id="sound-icon"></i>
-          <span id="sound-label">Audio: OFF</span>
-        </button>
+        <!-- Card 2: Web Monitoring -->
+        <div class="bg-white rounded-3xl p-6 shadow-sm border border-[#E5E0D2] hover:shadow-card hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-sage-soft text-sage-deep flex items-center justify-center mb-5 group-hover:bg-sage group-hover:text-white transition-colors duration-300">
+              <i data-lucide="layout-dashboard" class="w-7 h-7 stroke-[2]"></i>
+            </div>
+            <h3 class="text-lg font-bold text-charcoal mb-2.5 group-hover:text-terracotta transition-colors">
+              2. Web Monitoring
+            </h3>
+            <p class="text-sm text-sage-gray leading-relaxed">
+              HTML5, Tailwind CSS, JavaScript ES6+, dan visualisasi grafik telemetri real-time.
+            </p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-[#F0EBE1] flex flex-wrap gap-1.5 font-mono text-[11px] text-sage-deep">
+            <span class="bg-[#F5F3EE] px-2 py-0.5 rounded-md">HTML5</span>
+            <span class="bg-[#F5F3EE] px-2 py-0.5 rounded-md">Tailwind</span>
+            <span class="bg-[#F5F3EE] px-2 py-0.5 rounded-md">ES6+</span>
+            <span class="bg-[#F5F3EE] px-2 py-0.5 rounded-md">Charts</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Cloud & Notifikasi -->
+        <div class="bg-white rounded-3xl p-6 shadow-sm border border-[#E5E0D2] hover:shadow-card hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-sage-soft text-sage-deep flex items-center justify-center mb-5 group-hover:bg-sage group-hover:text-white transition-colors duration-300">
+              <i data-lucide="cloud-lightning" class="w-7 h-7 stroke-[2]"></i>
+            </div>
+            <h3 class="text-lg font-bold text-charcoal mb-2.5 group-hover:text-terracotta transition-colors">
+              3. Cloud &amp; Notifikasi
+            </h3>
+            <p class="text-sm text-sage-gray leading-relaxed">
+              Integrasi Google Firebase, database SQL, dan notifikasi otomatis via Telegram Bot API.
+            </p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-[#F0EBE1] flex flex-wrap gap-1.5 font-mono text-[11px] text-sage-deep">
+            <span class="bg-[#F5F3EE] px-2 py-0.5 rounded-md">Firebase</span>
+            <span class="bg-[#F5F3EE] px-2 py-0.5 rounded-md">SQL</span>
+            <span class="bg-[#F5F3EE] px-2 py-0.5 rounded-md">Telegram</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Simulasi & Prototyping -->
+        <div class="bg-white rounded-3xl p-6 shadow-sm border border-[#E5E0D2] hover:shadow-card hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-sage-soft text-sage-deep flex items-center justify-center mb-5 group-hover:bg-sage group-hover:text-white transition-colors duration-300">
+              <i data-lucide="flask-conical" class="w-7 h-7 stroke-[2]"></i>
+            </div>
+            <h3 class="text-lg font-bold text-charcoal mb-2.5 group-hover:text-terracotta transition-colors">
+              4. Simulasi &amp; Prototyping
+            </h3>
+            <p class="text-sm text-sage-gray leading-relaxed">
+              Pengujian presisi menggunakan Wokwi, Arduino IDE, hingga integrasi Android Studio.
+            </p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-[#F0EBE1] flex flex-wrap gap-1.5 font-mono text-[11px] text-sage-deep">
+            <span class="bg-[#F5F3EE] px-2 py-0.5 rounded-md">Wokwi</span>
+            <span class="bg-[#F5F3EE] px-2 py-0.5 rounded-md">Arduino IDE</span>
+            <span class="bg-[#F5F3EE] px-2 py-0.5 rounded-md">Android</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- SECTION D: LAYANAN POPULER (Container Sage Green #8FA18E) -->
+  <!-- ============================================================ -->
+  <section id="layanan" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-sage rounded-4xl sm:rounded-5xl p-7 sm:p-10 lg:p-14 text-white relative overflow-hidden shadow-sage">
+      
+      <!-- Background Organic Glow & Curve Elements -->
+      <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+      <div class="absolute -left-20 -top-20 w-80 h-80 bg-black/10 rounded-full blur-2xl pointer-events-none"></div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center relative z-10">
+        
+        <!-- Sisi Kiri: Judul, Deskripsi & Tombol Putih -->
+        <div class="lg:col-span-4 flex flex-col items-start space-y-6">
+          <span class="font-mono text-xs uppercase tracking-widest bg-white/20 text-white px-3.5 py-1.5 rounded-full font-semibold backdrop-blur-sm">
+            PAKET LAYANAN
+          </span>
+
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
+            Layanan Populer
+          </h2>
+
+          <p class="text-white/90 text-sm sm:text-base leading-relaxed">
+            Solusi siap pakai maupun custom untuk bisnis, UMKM, instansi, hingga proyek riset &amp; tugas akhir.
+          </p>
+
+          <ul class="space-y-2.5 text-xs sm:text-sm text-white/95">
+            <li class="flex items-center gap-2">
+              <i data-lucide="check-circle" class="w-4 h-4 text-white"></i>
+              <span>Source code firmware &amp; skema lengkap</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="check-circle" class="w-4 h-4 text-white"></i>
+              <span>Pendampingan implementasi &amp; revisi</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="check-circle" class="w-4 h-4 text-white"></i>
+              <span>Konsultasi gratis pra-pemesanan</span>
+            </li>
+          </ul>
+
+          <div class="pt-2">
+            <a href="#kontak" onclick="pilihTopik('Jasa Proyek IoT')" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white hover:bg-[#FAF8F5] text-charcoal font-bold text-sm shadow-md hover:shadow-xl hover:scale-105 transition-all duration-200">
+              <i data-lucide="send" class="w-4 h-4 text-terracotta"></i>
+              <span>Konsultasi Paket</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Sisi Kanan: 3 Kartu Layanan dengan Gambar Lingkaran di Atasnya -->
+        <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Kartu 1: Custom Sistem IoT -->
+          <div class="bg-white rounded-3xl p-6 text-charcoal flex flex-col justify-between shadow-card hover:-translate-y-2 transition-all duration-300">
+            <div>
+              <!-- Gambar / Ikon Berbentuk Lingkaran -->
+              <div class="w-16 h-16 rounded-full bg-terracotta-light text-terracotta flex items-center justify-center mx-auto mb-4 border-2 border-terracotta/20 shadow-sm">
+                <i data-lucide="cpu" class="w-8 h-8"></i>
+              </div>
+
+              <h3 class="text-lg font-extrabold text-center text-charcoal mb-2">
+                Custom Sistem IoT
+              </h3>
+
+              <p class="text-xs sm:text-sm text-sage-gray text-center leading-relaxed mb-4">
+                Perakitan ESP32/Arduino, sensor &amp; otomasi aktuator sesuai spesifikasi kebutuhan Anda.
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-[#EAE5D9] text-center">
+              <span class="font-mono text-xs text-sage-gray block mb-1">Investasi Proyek</span>
+              <span class="text-lg font-extrabold text-terracotta block">
+                Mulai Rp 1.500.000
+              </span>
+              <button onclick="pilihTopik('Jasa Proyek IoT')" class="mt-4 w-full py-2.5 rounded-full bg-[#F5F3EE] hover:bg-terracotta hover:text-white font-bold text-xs transition duration-200">
+                Pilih Paket Ini
+              </button>
+            </div>
+          </div>
+
+          <!-- Kartu 2: Web Dashboard & Monitoring -->
+          <div class="bg-white rounded-3xl p-6 text-charcoal flex flex-col justify-between shadow-card hover:-translate-y-2 transition-all duration-300 relative border-2 border-white">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-terracotta text-white font-mono text-[10px] font-bold uppercase tracking-wider py-0.5 px-3 rounded-full shadow-sm">
+              Rekomendasi
+            </div>
+
+            <div>
+              <!-- Gambar / Ikon Berbentuk Lingkaran -->
+              <div class="w-16 h-16 rounded-full bg-sage-light text-sage-deep flex items-center justify-center mx-auto mb-4 border-2 border-sage/30 shadow-sm">
+                <i data-lucide="gauge" class="w-8 h-8"></i>
+              </div>
+
+              <h3 class="text-lg font-extrabold text-center text-charcoal mb-2">
+                Web Dashboard &amp; Monitoring
+              </h3>
+
+              <p class="text-xs sm:text-sm text-sage-gray text-center leading-relaxed mb-4">
+                Antarmuka pantau data sensor real-time &amp; Google Firebase dengan grafik visual responsif.
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-[#EAE5D9] text-center">
+              <span class="font-mono text-xs text-sage-gray block mb-1">Investasi Proyek</span>
+              <span class="text-lg font-extrabold text-terracotta block">
+                Mulai Rp 1.800.000
+              </span>
+              <button onclick="pilihTopik('Web Dashboard')" class="mt-4 w-full py-2.5 rounded-full bg-sage hover:bg-sage-dark text-white font-bold text-xs transition duration-200 shadow-sm">
+                Pilih Paket Ini
+              </button>
+            </div>
+          </div>
+
+          <!-- Kartu 3: Website Profil & UMKM -->
+          <div class="bg-white rounded-3xl p-6 text-charcoal flex flex-col justify-between shadow-card hover:-translate-y-2 transition-all duration-300">
+            <div>
+              <!-- Gambar / Ikon Berbentuk Lingkaran -->
+              <div class="w-16 h-16 rounded-full bg-amber-50 text-amber-700 flex items-center justify-center mx-auto mb-4 border-2 border-amber-200 shadow-sm">
+                <i data-lucide="globe" class="w-8 h-8"></i>
+              </div>
+
+              <h3 class="text-lg font-extrabold text-center text-charcoal mb-2">
+                Website Profil &amp; UMKM
+              </h3>
+
+              <p class="text-xs sm:text-sm text-sage-gray text-center leading-relaxed mb-4">
+                Desain modern, cepat, responsif &amp; integrasi WhatsApp langsung untuk konversi penjualan.
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-[#EAE5D9] text-center">
+              <span class="font-mono text-xs text-sage-gray block mb-1">Investasi Proyek</span>
+              <span class="text-lg font-extrabold text-terracotta block">
+                Mulai Rp 1.000.000
+              </span>
+              <button onclick="pilihTopik('Pembuatan Website')" class="mt-4 w-full py-2.5 rounded-full bg-[#F5F3EE] hover:bg-terracotta hover:text-white font-bold text-xs transition duration-200">
+                Pilih Paket Ini
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- SECTION E: PORTOFOLIO PROYEK NYATA (Grid Kartu Putih Bersudut Membulat) -->
+  <!-- ============================================================ -->
+  <section id="portofolio" class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Judul Tengah -->
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="font-mono text-xs font-bold uppercase tracking-wider text-sage-dark bg-sage-soft/60 px-3 py-1 rounded-full border border-sage/20">
+          STUDI KASUS &amp; IMPLEMENTASI
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-charcoal mt-3 tracking-tight">
+          Proyek &amp; Riset yang Telah Dikerjakan
+        </h2>
+        <p class="text-sm sm:text-base text-sage-gray mt-2">
+          Bukti nyata perancangan sistem berbasis mikrokontroler, otomasi sensor, dan integrasi cloud.
+        </p>
+      </div>
+
+      <!-- 4 Kartu Putih Bersudut Membulat (2x2 Grid) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- PROYEK 1: Kelembapan Tanah & Pompa Otomatis -->
+        <div class="bg-white rounded-3xl p-6 sm:p-7 shadow-sm border border-[#E3DDCF] hover:shadow-card hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <!-- Banner Visual / Ilustrasi IoT -->
+            <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-[#E4ECE3] to-[#D5E1D4] relative overflow-hidden flex items-center justify-center mb-6 border border-[#CFDBD0]">
+              <!-- Schematic illustration -->
+              <svg class="w-full h-full opacity-60" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="200" cy="100" r="70" stroke="#8FA18E" stroke-width="2" stroke-dasharray="4 4" class="circuit-line"/>
+                <circle cx="200" cy="100" r="45" fill="#8FA18E" fill-opacity="0.2"/>
+                <path d="M70 100 H155 M245 100 H330 M200 30 V55 M200 145 V170" stroke="#5E745D" stroke-width="3" stroke-linecap="round"/>
+                <rect x="175" y="75" width="50" height="50" rx="10" fill="#5E745D"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center flex-col text-center p-4">
+                <div class="w-14 h-14 rounded-2xl bg-white/90 shadow-md flex items-center justify-center text-sage-deep mb-2">
+                  <i data-lucide="droplets" class="w-8 h-8 text-emerald-600"></i>
+                </div>
+                <span class="font-mono text-xs font-bold text-sage-deep bg-white/80 px-2.5 py-0.5 rounded-full">
+                  ESP32 + Soil Moisture Sensor
+                </span>
+              </div>
+            </div>
+
+            <!-- Kategori Badge -->
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-mono text-xs font-bold text-sage-deep bg-sage-soft px-3 py-1 rounded-full">
+                AGRITECH &amp; AUTOMATION
+              </span>
+              <span class="text-xs text-sage-gray font-mono">Status: Selesai &amp; Teruji</span>
+            </div>
+
+            <!-- Judul Proyek -->
+            <h3 class="text-xl font-extrabold text-charcoal mb-2.5 group-hover:text-terracotta transition-colors">
+              Sistem Kelembapan Tanah &amp; Pompa Otomatis
+            </h3>
+
+            <!-- Deskripsi Singkat -->
+            <p class="text-sm text-sage-gray leading-relaxed mb-5">
+              ESP32, sensor Soil Moisture, pompa relai otomatis, alarm buzzer, dan notifikasi Telegram Bot API saat tanah membutuhkan penyiraman secara berkala.
+            </p>
+
+            <!-- Tag Teknologi -->
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="font-mono text-xs bg-[#F5F3EE] text-charcoal px-2.5 py-1 rounded-lg border border-[#E7E2D8]">ESP32</span>
+              <span class="font-mono text-xs bg-[#F5F3EE] text-charcoal px-2.5 py-1 rounded-lg border border-[#E7E2D8]">Soil Sensor</span>
+              <span class="font-mono text-xs bg-[#F5F3EE] text-charcoal px-2.5 py-1 rounded-lg border border-[#E7E2D8]">Relay Module</span>
+              <span class="font-mono text-xs bg-[#F5F3EE] text-charcoal px-2.5 py-1 rounded-lg border border-[#E7E2D8]">Telegram Bot API</span>
+            </div>
+          </div>
+
+          <!-- Bottom Row: View Details Button -->
+          <div class="pt-4 border-t border-[#ECE7DA] flex items-center justify-between">
+            <span class="text-xs font-semibold text-sage-deep">Lihat spesifikasi perangkat</span>
+            <button onclick="bukaModalProyek(1)" aria-label="Detail Proyek Kelembapan Tanah" class="w-10 h-10 rounded-full bg-sage-deep hover:bg-terracotta text-white flex items-center justify-center transition-all duration-300 shadow-sm hover:scale-110">
+              <i data-lucide="plus" class="w-5 h-5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- PROYEK 2: Smart Ride Mode Motor Listrik -->
+        <div class="bg-white rounded-3xl p-6 sm:p-7 shadow-sm border border-[#E3DDCF] hover:shadow-card hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <!-- Banner Visual / Ilustrasi EV Throttle -->
+            <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-[#F5EBE6] to-[#EBD9D0] relative overflow-hidden flex items-center justify-center mb-6 border border-[#DFCAC0]">
+              <svg class="w-full h-full opacity-60" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 150 Q200 40 350 150" stroke="#E57E51" stroke-width="3" fill="none" stroke-dasharray="6 4" class="circuit-line"/>
+                <circle cx="200" cy="95" r="40" fill="#E57E51" fill-opacity="0.15"/>
+                <path d="M160 140 L200 80 L240 140 Z" fill="#E57E51" fill-opacity="0.4"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center flex-col text-center p-4">
+                <div class="w-14 h-14 rounded-2xl bg-white/90 shadow-md flex items-center justify-center text-terracotta mb-2">
+                  <i data-lucide="zap" class="w-8 h-8 text-terracotta"></i>
+                </div>
+                <span class="font-mono text-xs font-bold text-charcoal bg-white/80 px-2.5 py-0.5 rounded-full">
+                  Arduino Nano + Wokwi Simulation
+                </span>
+              </div>
+            </div>
+
+            <!-- Kategori Badge -->
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-mono text-xs font-bold text-terracotta bg-terracotta-light px-3 py-1 rounded-full">
+                ELECTRIC VEHICLE &amp; SIMULATION
+              </span>
+              <span class="text-xs text-sage-gray font-mono">Status: Teruji di Simulator</span>
+            </div>
+
+            <!-- Judul Proyek -->
+            <h3 class="text-xl font-extrabold text-charcoal mb-2.5 group-hover:text-terracotta transition-colors">
+              Smart Ride Mode Motor Listrik (3-Mode)
+            </h3>
+
+            <!-- Deskripsi Singkat -->
+            <p class="text-sm text-sage-gray leading-relaxed mb-5">
+              Manipulasi sensor throttle berbasis Arduino Nano (mode Race, Normal, Rain) teruji di simulator Wokwi untuk mengatur akselerasi dan efisiensi baterai.
+            </p>
+
+            <!-- Tag Teknologi -->
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="font-mono text-xs bg-[#F5F3EE] text-charcoal px-2.5 py-1 rounded-lg border border-[#E7E2D8]">Arduino Nano</span>
+              <span class="font-mono text-xs bg-[#F5F3EE] text-charcoal px-2.5 py-1 rounded-lg border border-[#E7E2D8]">Wokwi Simulator</span>
+              <span class="font-mono text-xs bg-[#F5F3EE] text-charcoal px-2.5 py-1 rounded-lg border border-[#E7E2D8]">PWM Modulation</span>
+              <span class="font-mono text-xs bg-[#F5F3EE] text-charcoal px-2.5 py-1 rounded-lg border border-[#E7E2D8]">Throttle Sensor</span>
+            </div>
+          </div>
+
+          <!-- Bottom Row: View Details Button -->
+          <div class="pt-4 border-t border-[#ECE7DA] flex items-center justify-between">
+            <span class="text-xs font-semibold text-sage-deep">Lihat algoritma &amp; mode berkendara</span>
+            <button onclick="bukaModalProyek(2)" aria-label="Detail Proyek Motor Listrik" class="w-10 h-10 rounded-full bg-sage-deep hover:bg-terracotta text-white flex items-center justify-center transition-all duration-300 shadow-sm hover:scale-110">
+              <i data-lucide="plus" class="w-5 h-5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- PROYEK 3: Alat Bantu Tunanetra Berbasis LiDAR -->
+        <div class="bg-white rounded-3xl p-6 sm:p-7 shadow-sm border border-[#E3DDCF] hover:shadow-card hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <!-- Banner Visual / Ilustrasi LiDAR -->
+            <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-[#E2EAE7] to-[#CCDCD7] relative overflow-hidden flex items-center justify-center mb-6 border border-[#BED2CC]">
+              <svg class="w-full h-full opacity-60" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M200 180 L120 40 M200 180 L200 30 M200 180 L280 40" stroke="#465645" stroke-width="2" stroke-dasharray="5 5" class="circuit-line"/>
+                <circle cx="200" cy="180" r="16" fill="#465645"/>
+                <circle cx="120" cy="40" r="10" fill="#E57E51"/>
+                <circle cx="200" cy="30" r="10" fill="#E57E51"/>
+                <circle cx="280" cy="40" r="10" fill="#E57E51"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center flex-col text-center p-4">
+                <div class="w-14 h-14 rounded-2xl bg-white/90 shadow-md flex items-center justify-center text-sage-deep mb-2">
+                  <i data-lucide="radar" class="w-8 h-8 text-sage-dark"></i>
+                </div>
+                <span class="font-mono text-xs font-bold text-sage-deep bg-white/80 px-2.5 py-0.5 rounded-full">
+                  LiDAR + Raspberry Pi + AM Tech
+                </span>
+              </div>
+            </div>
+
+            <!-- Kategori Badge -->
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-mono text-xs font-bold text-sage-deep bg-sage-soft px-3 py-1 rounded-full">
+                AM TECHNOLOGY JOGJA • INDUSTRI
+              </span>
+              <span class="text-xs text-sage-gray font-mono">Kerjasama Magang</span>
+            </div>
+
+            <!-- Judul Proyek -->
+            <h3 class="text-xl font-extrabold text-charcoal mb-2.5 group-hover:text-terracotta transition-colors">
+              Alat Bantu Tunanetra Berbasis LiDAR
+            </h3>
+
+            <!-- Deskripsi Singkat -->
+            <p class="text-sm text-sage-gray leading-relaxed mb-5">
+              Kolaborasi industri bersama AM TECHNOLOGY Jogja menggunakan sensor LiDAR, Raspberry Pi, dan feedback buzzer audio adaptif untuk deteksi rintangan akurat.
+            </p>
+
+            <!-- Tag Teknologi -->
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="font-mono text-xs bg-[#F5F3EE] text-charcoal px-2.5 py-1 rounded-lg border border-[#E7E2D8]">LiDAR Sensor</span>
+              <span class="font-mono text-xs bg-[#F5F3EE] text-charcoal px-2.5 py-1 rounded-lg border border-[#E7E2D8]">Raspberry Pi</span>
+              <span class="font-mono text-xs bg-[#F5F3EE] text-charcoal px-2.5 py-1 rounded-lg border border-[#E7E2D8]">Python</span>
+              <span class="font-mono text-xs bg-[#F5F3EE] text-charcoal px-2.5 py-1 rounded-lg border border-[#E7E2D8]">Buzzer Alert</span>
+            </div>
+          </div>
+
+          <!-- Bottom Row: View Details Button -->
+          <div class="pt-4 border-t border-[#ECE7DA] flex items-center justify-between">
+            <span class="text-xs font-semibold text-sage-deep">Lihat data riset &amp; arsitektur</span>
+            <button onclick="bukaModalProyek(3)" aria-label="Detail Proyek LiDAR Tunanetra" class="w-10 h-10 rounded-full bg-sage-deep hover:bg-terracotta text-white flex items-center justify-center transition-all duration-300 shadow-sm hover:scale-110">
+              <i data-lucide="plus" class="w-5 h-5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- PROYEK 4: Monitoring Jadwal Sholat Web Server ESP32 -->
+        <div class="bg-white rounded-3xl p-6 sm:p-7 shadow-sm border border-[#E3DDCF] hover:shadow-card hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <!-- Banner Visual / Ilustrasi Web Server -->
+            <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-[#EAE6F0] to-[#DDD7E8] relative overflow-hidden flex items-center justify-center mb-6 border border-[#CECAE0]">
+              <svg class="w-full h-full opacity-60" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="80" y="40" width="240" height="120" rx="12" stroke="#685B7A" stroke-width="2"/>
+                <line x1="80" y1="70" x2="320" y2="70" stroke="#685B7A" stroke-width="1.5"/>
+                <circle cx="100" cy="55" r="4" fill="#685B7A"/>
+                <circle cx="115" cy="55" r="4" fill="#685B7A"/>
+                <circle cx="130" cy="55" r="4" fill="#685B7A"/>
+                <path d="M130 110 H270 M130 130 H220" stroke="#685B7A" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center flex-col text-center p-4">
+                <div class="w-14 h-14 rounded-2xl bg-white/90 shadow-md flex items-center justify-center text-indigo-700 mb-2">
+                  <i data-lucide="clock" class="w-8 h-8 text-indigo-600"></i>
+                </div>
+                <span class="font-mono text-xs font-bold text-charcoal bg-white/80 px-2.5 py-0.5 rounded-full">
+                  ESP32 Web Server + Custom PCB
+                </span>
+              </div>
+            </div>
+
+            <!-- Kategori Badge -->
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-mono text-xs font-bold text-indigo-800 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100">
+                EMBEDDED WEB &amp; HARDWARE PCB
+              </span>
+              <span class="text-xs text-sage-gray font-mono">Smart Display Ready</span>
+            </div>
+
+            <!-- Judul Proyek -->
+            <h3 class="text-xl font-extrabold text-charcoal mb-2.5 group-hover:text-terracotta transition-colors">
+              Monitoring Jadwal Sholat Web Server ESP32
+            </h3>
+
+            <!-- Deskripsi Singkat -->
+            <p class="text-sm text-sage-gray leading-relaxed mb-5">
+              ESP32 sebagai web server lokal terhubung Wi-Fi untuk tampilan Smart TV/LCD, desain PCB custom, &amp; pengaturan jadwal via Android Studio.
+            </p>
+
+            <!-- Tag Teknologi -->
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="font-mono text-xs bg-[#F5F3EE] text-charcoal px-2.5 py-1 rounded-lg border border-[#E7E2D8]">ESP32 Server</span>
+              <span class="font-mono text-xs bg-[#F5F3EE] text-charcoal px-2.5 py-1 rounded-lg border border-[#E7E2D8]">Custom PCB</span>
+              <span class="font-mono text-xs bg-[#F5F3EE] text-charcoal px-2.5 py-1 rounded-lg border border-[#E7E2D8]">Android Studio</span>
+              <span class="font-mono text-xs bg-[#F5F3EE] text-charcoal px-2.5 py-1 rounded-lg border border-[#E7E2D8]">Wi-Fi Telemetry</span>
+            </div>
+          </div>
+
+          <!-- Bottom Row: View Details Button -->
+          <div class="pt-4 border-t border-[#ECE7DA] flex items-center justify-between">
+            <span class="text-xs font-semibold text-sage-deep">Lihat antarmuka TV &amp; skema PCB</span>
+            <button onclick="bukaModalProyek(4)" aria-label="Detail Proyek Jadwal Sholat ESP32" class="w-10 h-10 rounded-full bg-sage-deep hover:bg-terracotta text-white flex items-center justify-center transition-all duration-300 shadow-sm hover:scale-110">
+              <i data-lucide="plus" class="w-5 h-5"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- SECTION F: TENTANG SAYA (Banner Split 2 Kolom Container Sage Muda) -->
+  <!-- ============================================================ -->
+  <section id="tentang-saya" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-sage-soft/75 rounded-4xl sm:rounded-5xl p-8 sm:p-12 border border-[#CFD8CD] shadow-sm relative overflow-hidden">
+      
+      <!-- Subtle organic shape overlay -->
+      <div class="absolute -right-24 -top-24 w-80 h-80 bg-white/40 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Kolom Kiri: Teks Tentang Yogo -->
+        <div class="lg:col-span-7 flex flex-col items-start space-y-6">
+          <span class="font-mono text-xs uppercase tracking-wider bg-white px-3.5 py-1 rounded-full text-sage-deep font-bold border border-[#C5D0C3]">
+            PROFIL PENGEMBANG
+          </span>
+
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-charcoal tracking-tight">
+            Kenalan dengan Yogo Prasetyo
+          </h2>
+
+          <p class="text-base sm:text-lg text-charcoal/90 leading-relaxed font-normal">
+            Mahasiswa tingkat akhir D3 Teknologi Informasi Politeknik Negeri Madiun dengan pengalaman magang industri di startup IoT AM TECHNOLOGY Jogja. Terbiasa menjembatani dunia fisik dan digital melalui kombinasi sensor cerdas, firmware C/C++, dan antarmuka web modern.
+          </p>
+
+          <div>
+            <a href="#kontak" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-sage-deep hover:bg-charcoal text-white font-bold text-sm shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>Diskusikan Proyek Anda</span>
+            </a>
+          </div>
+
+          <!-- 3 Ikon Kecil Stats / Milestone -->
+          <div class="pt-6 border-t border-[#CAD5C8] grid grid-cols-1 sm:grid-cols-3 gap-4 w-full">
+            
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-white text-sage-deep flex items-center justify-center shadow-sm">
+                <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="font-extrabold text-sm text-charcoal">3+ Tahun</p>
+                <p class="text-xs text-sage-gray">Studi IT di PNM</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-white text-sage-deep flex items-center justify-center shadow-sm">
+                <i data-lucide="layers" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="font-extrabold text-sm text-charcoal">4+ Proyek</p>
+                <p class="text-xs text-sage-gray">Nyata &amp; Riset Teruji</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-white text-sage-deep flex items-center justify-center shadow-sm">
+                <i data-lucide="building-2" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="font-extrabold text-sm text-charcoal">Magang Industri</p>
+                <p class="text-xs text-sage-gray">AM Tech Jogja</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Kolom Kanan: Foto Rapi dengan Badge Lokasi Madiun -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-xs sm:max-w-sm rounded-3xl bg-white p-3 shadow-card border-2 border-white">
+            
+            <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-[#ECE8DF]">
+              <img 
+                src="foto-profil.jpeg" 
+                alt="Yogo Prasetyo — D3 TI PNM" 
+                class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534972195531-a756b1126f25?auto=format&fit=crop&w=800&q=80';"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-transparent to-transparent"></div>
+            </div>
+
+            <!-- Floating Badge Lokasi: "Madiun, Jawa Timur" -->
+            <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white py-2 px-4 rounded-full shadow-md border border-[#E2DDD0] flex items-center gap-2 whitespace-nowrap">
+              <i data-lucide="map-pin" class="w-4 h-4 text-terracotta"></i>
+              <span class="font-mono text-xs font-bold text-charcoal">Madiun, Jawa Timur</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- SECTION G: KONTAK & INTERACTIVE WHATSAPP BUILDER -->
+  <!-- ============================================================ -->
+  <section id="kontak" class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Container Putih Bersudut Membulat, Split 2 Kolom -->
+      <div class="bg-white rounded-4xl sm:rounded-5xl p-8 sm:p-12 lg:p-14 shadow-card border border-[#E5E0D2] relative overflow-hidden">
+        
+        <!-- Subtle Top Accents -->
+        <div class="absolute top-0 right-0 w-80 h-80 bg-sage-soft/30 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative z-10">
+          
+          <!-- SISI KIRI: INFORMASI KONTAK RESMI -->
+          <div class="lg:col-span-5 flex flex-col justify-between space-y-8">
+            <div>
+              <span class="font-mono text-xs uppercase tracking-wider bg-sage-soft text-sage-deep px-3.5 py-1 rounded-full font-bold">
+                KONSULTASI LANGSUNG
+              </span>
+
+              <h2 class="text-3xl sm:text-4xl font-extrabold text-charcoal tracking-tight mt-4 mb-3">
+                Mari Diskusikan Proyek Anda!
+              </h2>
+
+              <p class="text-sage-gray text-sm sm:text-base leading-relaxed">
+                Punya tugas akhir, prototipe riset, sistem otomasi pabrik/kebun, atau butuh website bisnis yang berkelas? Ceritakan ide Anda sekarang.
+              </p>
+            </div>
+
+            <!-- Daftar Info dengan Ikon -->
+            <div class="space-y-4">
+              
+              <!-- Lokasi -->
+              <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-[#FAF8F5] border border-[#ECE7DA]">
+                <div class="w-10 h-10 rounded-xl bg-sage-soft text-sage-deep flex items-center justify-center shrink-0">
+                  <i data-lucide="map-pin" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="text-xs text-sage-gray block">Lokasi Studio</span>
+                  <span class="text-sm font-bold text-charcoal">Madiun, Jawa Timur, Indonesia</span>
+                </div>
+              </div>
+
+              <!-- Kampus -->
+              <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-[#FAF8F5] border border-[#ECE7DA]">
+                <div class="w-10 h-10 rounded-xl bg-sage-soft text-sage-deep flex items-center justify-center shrink-0">
+                  <i data-lucide="school" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="text-xs text-sage-gray block">Pendidikan</span>
+                  <span class="text-sm font-bold text-charcoal">Politeknik Negeri Madiun (PNM)</span>
+                </div>
+              </div>
+
+              <!-- WhatsApp & Tombol Salin Nomor -->
+              <div class="p-4 rounded-2xl bg-[#FAF8F5] border border-[#ECE7DA] space-y-2.5">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+                      <i class="fa-brands fa-whatsapp text-lg"></i>
+                    </div>
+                    <div>
+                      <span class="text-xs text-sage-gray block">Nomor WhatsApp</span>
+                      <span class="font-mono text-sm sm:text-base font-extrabold text-charcoal">+62 882-1092-1402</span>
+                    </div>
+                  </div>
+                  <!-- Tombol Salin Nomor -->
+                  <button 
+                    id="copyBtn" 
+                    onclick="salinNomorWA()"
+                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-[#DCD6C7] hover:bg-sage hover:text-white text-charcoal text-xs font-semibold shadow-sm transition-all"
+                  >
+                    <i data-lucide="copy" id="copyIcon" class="w-3.5 h-3.5"></i>
+                    <span id="copyText">Salin</span>
+                  </button>
+                </div>
+                <p id="copyAlert" class="text-xs text-emerald-700 font-semibold hidden transition-all">
+                  ✓ Nomor WhatsApp berhasil disalin ke clipboard!
+                </p>
+              </div>
+
+              <!-- Instagram DM -->
+              <div class="p-4 rounded-2xl bg-[#FAF8F5] border border-[#ECE7DA]">
+                <div class="flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-100 via-rose-100 to-purple-100 text-rose-600 flex items-center justify-center shrink-0 border border-rose-200/60">
+                      <i class="fa-brands fa-instagram text-lg"></i>
+                    </div>
+                    <div>
+                      <span class="text-xs text-sage-gray block">Instagram DM</span>
+                      <span class="font-mono text-sm sm:text-base font-extrabold text-charcoal">@styoy_o</span>
+                    </div>
+                  </div>
+                  <a 
+                    href="https://www.instagram.com/styoy_o?utm_source=qr&dmpr=OHg4b3g2bTNzc3k5" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white border border-[#DCD6C7] hover:bg-terracotta hover:text-white hover:border-terracotta text-charcoal text-xs font-semibold shadow-sm transition-all shrink-0"
+                  >
+                    <i class="fa-regular fa-paper-plane text-xs"></i>
+                    <span>Kirim DM</span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Jaminan Respon -->
+            <div class="p-4 rounded-2xl bg-sage/10 border border-sage/20 flex items-center gap-3">
+              <span class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
+              <p class="text-xs text-sage-deep font-medium">
+                Respon cepat setiap hari (08.00 – 22.00 WIB). Konsultasi awal tidak dipungut biaya.
+              </p>
+            </div>
+
+          </div>
+
+
+          <!-- SISI KANAN: INTERACTIVE WHATSAPP BUILDER -->
+          <div class="lg:col-span-7 bg-[#F9F7F3] p-6 sm:p-8 rounded-3xl border border-[#E7E2D5] shadow-inner">
+            
+            <div class="flex items-center gap-2 mb-4">
+              <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+              <h3 class="text-xl font-extrabold text-charcoal">
+                Kirim Pesan Cepat via WhatsApp
+              </h3>
+            </div>
+            
+            <p class="text-xs sm:text-sm text-sage-gray mb-6">
+              Pilih topik di bawah ini dan tuliskan nama Anda untuk membuat format pesan otomatis yang langsung terhubung ke WhatsApp.
+            </p>
+
+            <!-- 1. Pilihan Topik Cepat (Pill Buttons) -->
+            <div class="mb-5">
+              <label class="block font-mono text-xs font-bold text-charcoal uppercase tracking-wider mb-2.5">
+                1. Pilih Kebutuhan Proyek:
+              </label>
+              <div class="flex flex-wrap gap-2" id="topicPills">
+                <button type="button" onclick="setTopik('Jasa Proyek IoT', this)" class="topic-pill px-4 py-2 rounded-full text-xs font-bold transition-all border bg-sage-deep text-white border-sage-deep shadow-sm">
+                  <i class="fa-solid fa-microchip mr-1.5"></i> Jasa Proyek IoT
+                </button>
+                <button type="button" onclick="setTopik('Pembuatan Website', this)" class="topic-pill px-4 py-2 rounded-full text-xs font-bold transition-all border bg-white text-charcoal border-[#D5CFC1] hover:border-charcoal">
+                  <i class="fa-solid fa-globe mr-1.5"></i> Pembuatan Website
+                </button>
+                <button type="button" onclick="setTopik('Web Dashboard', this)" class="topic-pill px-4 py-2 rounded-full text-xs font-bold transition-all border bg-white text-charcoal border-[#D5CFC1] hover:border-charcoal">
+                  <i class="fa-solid fa-chart-line mr-1.5"></i> Web Dashboard
+                </button>
+                <button type="button" onclick="setTopik('Diskusi Santai', this)" class="topic-pill px-4 py-2 rounded-full text-xs font-bold transition-all border bg-white text-charcoal border-[#D5CFC1] hover:border-charcoal">
+                  <i class="fa-solid fa-mug-hot mr-1.5"></i> Diskusi Santai
+                </button>
+              </div>
+            </div>
+
+            <!-- 2. Input Teks: Nama / Instansi -->
+            <div class="mb-5">
+              <label for="namaInput" class="block font-mono text-xs font-bold text-charcoal uppercase tracking-wider mb-2">
+                2. Nama Anda / Instansi (Opsional):
+              </label>
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-sage-gray">
+                  <i data-lucide="user" class="w-4 h-4"></i>
+                </div>
+                <input 
+                  type="text" 
+                  id="namaInput" 
+                  oninput="updatePreviewPesan()"
+                  placeholder="Contoh: Budi Prasetyo - PT Inovasi Mandiri" 
+                  class="w-full pl-10 pr-4 py-3 rounded-2xl bg-white border border-[#D5CFC1] focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 text-sm text-charcoal outline-none transition"
+                />
+              </div>
+            </div>
+
+            <!-- 3. Catatan Tambahan (Opsional) -->
+            <div class="mb-5">
+              <label for="detailInput" class="block font-mono text-xs font-bold text-charcoal uppercase tracking-wider mb-2">
+                3. Deskripsi Singkat / Catatan (Opsional):
+              </label>
+              <textarea 
+                id="detailInput" 
+                rows="2"
+                oninput="updatePreviewPesan()"
+                placeholder="Contoh: Butuh sistem IoT berbasis ESP32 dengan sensor kelembapan tanah dan notifikasi Telegram..."
+                class="w-full px-4 py-2.5 rounded-2xl bg-white border border-[#D5CFC1] focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 text-sm text-charcoal outline-none transition resize-none"
+              ></textarea>
+            </div>
+
+            <!-- 4. Real-Time Message Preview (WhatsApp Chat Bubble Look) -->
+            <div class="mb-6">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-mono text-xs font-bold text-sage-gray uppercase tracking-wider">
+                  Preview Pesan Real-Time:
+                </span>
+                <span class="text-[11px] text-emerald-700 font-semibold flex items-center gap-1">
+                  <i class="fa-solid fa-lock text-[10px]"></i> WhatsApp Direct API
+                </span>
+              </div>
+              
+              <!-- Styled WhatsApp Bubble -->
+              <div class="bg-[#E7F8E8] border border-[#C5E9C7] rounded-2xl p-4 shadow-sm relative text-charcoal">
+                <div class="text-xs text-charcoal/90 leading-relaxed font-sans whitespace-pre-line" id="previewText">
+                  Halo Mas Yogo, saya tertarik untuk konsultasi seputar Jasa Proyek IoT. Apakah ada waktu luang untuk berdiskusi terkait teknis dan biayanya? Terima kasih!
+                </div>
+                <div class="flex items-center justify-end gap-1 mt-2 text-[10px] text-emerald-800 font-mono">
+                  <span>15:30</span>
+                  <i class="fa-solid fa-check-double text-emerald-600"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. Tombol CTA Terracotta: Kirim ke WhatsApp & Opsi DM Instagram -->
+            <div class="space-y-3">
+              <a 
+                id="sendWaBtn" 
+                href="https://wa.me/6288210921402?text=Halo%20Mas%20Yogo" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="w-full inline-flex items-center justify-center gap-3 py-4 px-8 rounded-full bg-terracotta hover:bg-terracotta-hover text-white font-extrabold text-base shadow-warm hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+              >
+                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                <span>Kirim ke WhatsApp Sekarang</span>
+              </a>
+
+              <a 
+                id="sendIgBtn"
+                href="https://www.instagram.com/styoy_o?utm_source=qr&dmpr=OHg4b3g2bTNzc3k5"
+                target="_blank"
+                rel="noopener noreferrer"
+                onclick="salinPesanUntukIG()"
+                class="w-full inline-flex items-center justify-center gap-2.5 py-3.5 px-6 rounded-full bg-white hover:bg-[#FAF8F5] text-charcoal font-bold text-sm border-2 border-[#DCD6C7] hover:border-rose-400 hover:text-rose-600 shadow-sm hover:-translate-y-0.5 transition-all duration-200"
+              >
+                <i class="fa-brands fa-instagram text-lg text-rose-500"></i>
+                <span>Atau Hubungi via DM Instagram (@styoy_o)</span>
+              </a>
+            </div>
+
+            <p id="igCopyNote" class="text-center text-[11px] text-emerald-700 font-semibold mt-2 hidden">
+              ✓ Format pesan sudah disalin otomatis—tinggal tempel (paste) di DM Instagram!
+            </p>
+            <p class="text-center text-[11px] text-sage-gray mt-2.5 font-mono">
+              Otomatis membuka WhatsApp atau DM Instagram (pesan tersalin untuk langsung di-paste).
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================ -->
+  <!-- FOOTER (Bar Warna Sage Green) -->
+  <!-- ============================================================ -->
+  <footer class="bg-sage text-white py-8 border-t border-sage-dark/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <!-- Kiri: Ikon Media Sosial -->
+        <div class="flex items-center gap-3">
+          <a href="https://wa.me/6288210921402" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Yogo Prasetyo" class="w-10 h-10 rounded-full bg-white/15 hover:bg-white hover:text-sage-deep flex items-center justify-center transition duration-200">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+          </a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub Yogo Prasetyo" class="w-10 h-10 rounded-full bg-white/15 hover:bg-white hover:text-sage-deep flex items-center justify-center transition duration-200">
+            <i class="fa-brands fa-github text-lg"></i>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Yogo Prasetyo" class="w-10 h-10 rounded-full bg-white/15 hover:bg-white hover:text-sage-deep flex items-center justify-center transition duration-200">
+            <i class="fa-brands fa-linkedin-in text-lg"></i>
+          </a>
+          <a href="https://www.instagram.com/styoy_o?utm_source=qr&dmpr=OHg4b3g2bTNzc3k5" target="_blank" rel="noopener noreferrer" aria-label="Instagram DM Yogo Prasetyo" class="w-10 h-10 rounded-full bg-white/15 hover:bg-white hover:text-sage-deep flex items-center justify-center transition duration-200">
+            <i class="fa-brands fa-instagram text-lg"></i>
+          </a>
+        </div>
+
+        <!-- Tengah: Hak Cipta & Info Kampus -->
+        <div class="text-center font-mono text-xs sm:text-sm text-white/90">
+          © 2026 <span class="font-bold text-white">Yogo Prasetyo</span> • D3 TI Politeknik Negeri Madiun
+        </div>
+
+        <!-- Kanan: Tagline Layanan -->
+        <div class="text-xs font-semibold text-white/80 flex items-center gap-2">
+          <span>Layanan IoT &amp; Web Development</span>
+          <span class="w-2 h-2 rounded-full bg-terracotta inline-block"></span>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================ -->
+  <!-- MODAL DETAIL PORTOFOLIO (INTERAKTIF) -->
+  <!-- ============================================================ -->
+  <div id="projectModal" class="fixed inset-0 z-50 bg-charcoal/60 backdrop-blur-sm hidden items-center justify-center p-4 transition-all duration-300">
+    <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto border border-[#E0DCD0]">
+      
+      <!-- Close Button -->
+      <button onclick="tutupModalProyek()" aria-label="Tutup Detail Proyek" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-[#F5F3EE] hover:bg-terracotta hover:text-white flex items-center justify-center text-charcoal transition">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div id="modalContent">
+        <!-- Konten dinamis disuntikkan oleh JavaScript -->
       </div>
 
     </div>
   </div>
 
-  <!-- ==================== 2. MAIN NAVIGATION BAR ==================== -->
-  <header
-    class="sticky top-[31px] z-40 bg-black/85 backdrop-blur-xl border-b border-black-800/90 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
 
-      <!-- Brand Logo -->
-      <a href="#beranda" class="flex items-center gap-3 group">
-        <div
-          class="w-9 h-9 rounded-xl bg-gradient-to-br from-yellow-300 via-yellow-400 to-amber-500 flex items-center justify-center text-black font-black text-base shadow-lg shadow-yellow-500/20 group-hover:scale-105 transition-transform">
-          <i class="fa-solid fa-bolt text-sm"></i>
-        </div>
-        <div class="flex flex-col">
-          <span
-            class="text-white font-extrabold text-base tracking-tight leading-none group-hover:text-yellow-400 transition-colors">
-            Yogo Prasetyo
-          </span>
-          <span class="text-[10px] font-mono text-yellow-400 tracking-widest uppercase font-semibold">
-            IoT &amp; Automation Lab
-          </span>
-        </div>
-      </a>
-
-      <!-- Desktop Nav Links -->
-      <nav class="hidden md:flex items-center gap-7 text-xs font-semibold uppercase tracking-wider text-neutral-300">
-        <a href="#beranda" class="hover:text-yellow-400 transition-colors py-1">Beranda</a>
-        <a href="#lab-simulasi" class="hover:text-yellow-400 transition-colors py-1 flex items-center gap-1.5">
-          <span class="w-1.5 h-1.5 rounded-full bg-yellow-400"></span>
-          Live Simulator
-        </a>
-        <a href="#proyek" class="hover:text-yellow-400 transition-colors py-1">Proyek &amp; Riset</a>
-        <a href="#keahlian" class="hover:text-yellow-400 transition-colors py-1">Tech Stack</a>
-        <a href="#tentang" class="hover:text-yellow-400 transition-colors py-1">Profil</a>
-      </nav>
-
-      <!-- Action Button: WhatsApp Builder -->
-      <div class="hidden sm:flex items-center gap-3">
-        <a href="#kontak"
-          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-extrabold text-black bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-400 hover:from-yellow-200 hover:to-yellow-300 shadow-lg shadow-yellow-500/20 hover:scale-[1.03] transition-all">
-          <i class="fa-brands fa-whatsapp text-sm font-bold"></i>
-          <span>Hubungi Langsung</span>
-        </a>
-      </div>
-
-      <!-- Mobile Menu Toggle Button -->
-      <button id="mobile-menu-btn"
-        class="md:hidden text-neutral-300 hover:text-white p-2 rounded-lg bg-black-900 border border-black-800"
-        aria-label="Toggle Mobile Menu">
-        <i class="fa-solid fa-bars-staggered text-lg text-yellow-400"></i>
-      </button>
-
-    </div>
-
-    <!-- Mobile Dropdown Menu -->
-    <div id="mobile-menu"
-      class="hidden md:hidden bg-black-950/95 border-b border-black-800 px-6 py-4 space-y-3 font-mono text-sm">
-      <a href="#beranda" class="block text-neutral-300 hover:text-yellow-400 py-1">» 01. Beranda</a>
-      <a href="#lab-simulasi" class="block text-yellow-400 hover:text-yellow-300 py-1">» 02. Live Simulator IoT</a>
-      <a href="#proyek" class="block text-neutral-300 hover:text-yellow-400 py-1">» 03. Proyek &amp; Riset</a>
-      <a href="#keahlian" class="block text-neutral-300 hover:text-yellow-400 py-1">» 04. Tech Stack</a>
-      <a href="#tentang" class="block text-neutral-300 hover:text-yellow-400 py-1">» 05. Profil &amp; Studi</a>
-      <a href="#kontak" class="block text-yellow-400 font-bold py-1 border-t border-black-800 pt-2">» 06. Generator
-        Kontak WhatsApp</a>
-    </div>
-  </header>
-
-  <main>
-    <!-- ==================== 3. HERO & CYBER DECK SECTION ==================== -->
-    <section id="beranda" class="relative pt-12 pb-20 md:pt-16 md:pb-28 overflow-hidden">
-      <!-- Yellow ambient backdrop glow -->
-      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="absolute top-1/3 right-10 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl pointer-events-none"></div>
-
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-
-          <!-- Left Column: Bio & Core Pitch (7 Cols) -->
-          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-
-            <!-- Profile Photo & Terminal Badge -->
-            <div class="flex items-center gap-3.5 justify-center lg:justify-start">
-              <img src="foto-profil.jpeg" alt="Yogo Prasetyo" class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl object-cover border-2 border-yellow-400 shadow-lg shadow-yellow-500/20">
-              <div
-                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black-900 border border-yellow-500/30 text-xs font-mono text-yellow-400 shadow-inner">
-                <span class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
-                <span>D3 TEKNOLOGI INFORMASI · POLITEKNIK NEGERI MADIUN</span>
-              </div>
-            </div>
-
-            <!-- Main Heading -->
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-              Menghubungkan Sensor Fisik ke <br class="hidden sm:block" />
-              <span class="bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-400 bg-clip-text text-transparent">
-                Sistem Web Cerdas
-              </span>
-            </h1>
-
-            <!-- Animated Typing Subtitle -->
-            <div
-              class="flex items-center justify-center lg:justify-start gap-2 font-mono text-base sm:text-lg text-neutral-300">
-              <span class="text-yellow-400 font-bold">&gt;</span>
-              <span id="typed-text"
-                class="text-yellow-300 font-semibold border-r-2 border-yellow-400 pr-1 animate-pulse">
-                IoT Systems &amp; Firmware Engineer
-              </span>
-            </div>
-
-            <p class="text-neutral-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Spesialisasi dalam integrasi sensor mikrokontroler (ESP32, Arduino Nano), otomasi aktuator, hingga
-              visualisasi data telemetri secara <em>real-time</em> melalui antarmuka web. Terbiasa memadukan logika
-              sistem C++ dengan arsitektur web modern.
-            </p>
-
-            <!-- Quick Action Badges -->
-            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
-              <a href="#lab-simulasi"
-                class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-black text-xs uppercase tracking-wider bg-yellow-400 hover:bg-yellow-300 text-black shadow-lg shadow-yellow-500/20 hover:scale-[1.02] transition-all">
-                <i class="fa-solid fa-microchip animate-bounce"></i>
-                <span>Jalankan Simulator IoT</span>
-              </a>
-              <a href="#proyek"
-                class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider text-yellow-400 bg-black-900 hover:bg-black-800 border border-black-750 hover:border-yellow-500/50 transition-all">
-                <i class="fa-solid fa-layer-group text-yellow-400"></i>
-                <span>Lihat 4 Proyek</span>
-              </a>
-            </div>
-
-            <!-- Quick Telemetry Specs Bar -->
-            <div
-              class="pt-4 border-t border-black-800 grid grid-cols-3 gap-4 text-center lg:text-left max-w-md mx-auto lg:mx-0">
-              <div>
-                <span class="block text-2xl font-black font-mono text-yellow-400">3+</span>
-                <span class="text-[11px] font-mono text-neutral-400 uppercase">Tahun Studi IT</span>
-              </div>
-              <div>
-                <span class="block text-2xl font-black font-mono text-yellow-300">4+</span>
-                <span class="text-[11px] font-mono text-neutral-400 uppercase">Riset &amp; Prototipe</span>
-              </div>
-              <div>
-                <span class="block text-2xl font-black font-mono text-yellow-400">AM Tech</span>
-                <span class="text-[11px] font-mono text-neutral-400 uppercase">Magang Industri</span>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Right Column: Interactive Hardware Terminal Deck (5 Cols) -->
-          <div class="lg:col-span-5" id="lab-simulasi">
-            <div
-              class="relative bg-black-900/95 border border-yellow-500/30 rounded-3xl p-5 sm:p-6 shadow-2xl shadow-yellow-950/40 glow-card backdrop-blur-xl">
-
-              <!-- Terminal Header -->
-              <div class="flex items-center justify-between border-b border-black-800 pb-3 mb-4">
-                <div class="flex items-center gap-2">
-                  <span class="w-3 h-3 rounded-full bg-yellow-400/80"></span>
-                  <span class="w-3 h-3 rounded-full bg-neutral-700"></span>
-                  <span class="w-3 h-3 rounded-full bg-neutral-800"></span>
-                  <span class="text-xs font-mono text-neutral-400 ml-2">ESP32_WROOM_BOARD.v2</span>
-                </div>
-                <span
-                  class="text-[10px] font-mono px-2 py-0.5 rounded bg-yellow-950/80 text-yellow-400 border border-yellow-500/40 font-bold">
-                  INTERACTIVE
-                </span>
-              </div>
-
-              <!-- Microcontroller Board Illustration -->
-              <div class="p-4 rounded-2xl bg-black border border-black-800 relative overflow-hidden mb-4">
-                <!-- Pin headers left & right -->
-                <div class="absolute left-1 top-2 bottom-2 w-2 pin-socket opacity-60"></div>
-                <div class="absolute right-1 top-2 bottom-2 w-2 pin-socket opacity-60"></div>
-
-                <div class="flex items-center justify-between mb-3 px-3">
-                  <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-microchip text-2xl text-yellow-400"></i>
-                    <div>
-                      <p class="text-xs font-bold font-mono text-white">ESP32 Dev Module</p>
-                      <p class="text-[10px] font-mono text-neutral-400">Dual Core Xtensa LX6</p>
-                    </div>
-                  </div>
-                  <!-- Dynamic LED Pin 2 Status -->
-                  <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black-900 border border-black-750">
-                    <span id="hw-led" class="w-2.5 h-2.5 rounded-full bg-neutral-800 transition-colors"></span>
-                    <span id="hw-led-text" class="text-[10px] font-mono text-neutral-400">LED D2: OFF</span>
-                  </div>
-                </div>
-
-                <!-- Live Sensor Simulation Output Box -->
-                <div class="bg-black-900/90 rounded-xl p-3 border border-black-800 font-mono text-xs space-y-1.5">
-                  <div class="flex justify-between text-neutral-400">
-                    <span>SENSOR KELEMBAPAN TANAH:</span>
-                    <span id="hw-soil-val" class="text-yellow-400 font-bold">55% (LEMBAP)</span>
-                  </div>
-                  <!-- Progress Bar -->
-                  <div class="w-full h-2 rounded-full bg-black overflow-hidden">
-                    <div id="hw-soil-bar" class="h-full bg-yellow-400 transition-all duration-300" style="width: 55%;">
-                    </div>
-                  </div>
-                  <div class="flex justify-between text-[11px] pt-1">
-                    <span class="text-neutral-400">STATUS POMPA AIR:</span>
-                    <span id="hw-pump-status" class="text-neutral-300 font-semibold">STANDBY (OFF)</span>
-                  </div>
-                  <div class="flex justify-between text-[11px]">
-                    <span class="text-neutral-400">BUZZER NOTIFIKASI:</span>
-                    <span id="hw-buzzer-status" class="text-neutral-400">SENYAP</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Interactive Controls (User Can Test Live) -->
-              <div class="space-y-3 font-mono text-xs">
-                <p class="text-neutral-400 text-[11px] uppercase tracking-wider flex items-center gap-1.5">
-                  <i class="fa-solid fa-hand-pointer text-yellow-400"></i>
-                  <span>Uji Interaksi Logika Mikrokontroler:</span>
-                </p>
-
-                <!-- Slider Soil Moisture -->
-                <div>
-                  <div class="flex justify-between text-[11px] text-neutral-300 mb-1">
-                    <span>Geser Simulasi Kadar Air Tanah:</span>
-                    <span id="slider-label" class="text-yellow-400 font-bold">55%</span>
-                  </div>
-                  <input type="range" id="soil-slider" min="10" max="95" value="55"
-                    class="w-full accent-yellow-400 bg-black rounded-lg cursor-pointer h-2">
-                </div>
-
-                <!-- 2 Action Buttons: Toggle LED & Beep Buzzer -->
-                <div class="grid grid-cols-2 gap-2 pt-1">
-                  <button id="btn-toggle-led"
-                    class="py-2.5 px-3 rounded-xl bg-black-800 hover:bg-black-750 text-neutral-200 border border-black-700 hover:border-yellow-400 flex items-center justify-center gap-2 transition-all">
-                    <i class="fa-solid fa-lightbulb text-yellow-400"></i>
-                    <span>Toggle LED D2</span>
-                  </button>
-                  <button id="btn-test-buzzer"
-                    class="py-2.5 px-3 rounded-xl bg-black-800 hover:bg-black-750 text-neutral-200 border border-black-700 hover:border-yellow-400 flex items-center justify-center gap-2 transition-all">
-                    <i class="fa-solid fa-bell text-yellow-400"></i>
-                    <span>Test Buzzer Tone</span>
-                  </button>
-                </div>
-              </div>
-
-              <!-- Simulator Helper Note -->
-              <p class="text-[10px] font-mono text-neutral-400 text-center mt-3 pt-2 border-t border-black-800">
-                *Geser kadar air di bawah 40% untuk memicu simulasi alarm &amp; pompa otomatis!
-              </p>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== 4. PROYEK, OTOMASI & SIMULASI (SHOWCASE PENJELASAN) ==================== -->
-    <section id="proyek" class="py-20 bg-black-950/90 border-y border-black-800 relative">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <!-- Section Title & Filter Tabs -->
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <div>
-            <div
-              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black-900 text-yellow-400 font-mono text-xs mb-3 border border-yellow-500/30">
-              <i class="fa-solid fa-code-branch text-yellow-400"></i>
-              REKAYASA SISTEM &amp; RISET NYATA
-            </div>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-              Proyek IoT, Otomasi &amp; Simulasi
-            </h2>
-            <p class="text-neutral-400 text-sm mt-2 max-w-xl">
-              Beberapa proyek dan bidang pengembangan yang saya kerjakan atau pelajari dalam teknologi Internet of
-              Things, otomasi, dan simulasi.
-            </p>
-          </div>
-
-          <!-- Filter Pills -->
-          <div class="flex flex-wrap gap-2 text-xs font-mono" id="project-filters">
-            <button
-              class="filter-btn active px-4 py-2 rounded-lg bg-yellow-400 text-black font-extrabold transition-all"
-              data-filter="all">
-              Semua (4)
-            </button>
-            <button
-              class="filter-btn px-4 py-2 rounded-lg bg-black-900 hover:bg-black-800 text-neutral-300 border border-black-800 hover:border-yellow-500/50 transition-all font-semibold"
-              data-filter="embedded">
-              ESP32 &amp; Sensor
-            </button>
-            <button
-              class="filter-btn px-4 py-2 rounded-lg bg-black-900 hover:bg-black-800 text-neutral-300 border border-black-800 hover:border-yellow-500/50 transition-all font-semibold"
-              data-filter="automotive">
-              Smart Otomotif
-            </button>
-            <button
-              class="filter-btn px-4 py-2 rounded-lg bg-black-900 hover:bg-black-800 text-neutral-300 border border-black-800 hover:border-yellow-500/50 transition-all font-semibold"
-              data-filter="assistive">
-              Assistive Tech
-            </button>
-          </div>
-        </div>
-
-        <!-- 4 Projects Cards Grid (Penjelasan Proyek Mendalam) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-container">
-
-          <!-- ==================== PROYEK 1 ==================== -->
-          <article
-            class="project-card glow-card bg-black-900/90 rounded-3xl p-6 sm:p-8 border border-black-800 flex flex-col justify-between"
-            data-category="embedded">
-            <div class="space-y-4">
-              <!-- Header Badges -->
-              <div class="flex items-center justify-between gap-3">
-                <span
-                  class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-yellow-950/60 border border-yellow-500/30 text-yellow-400 text-xs font-mono font-bold">
-                  <i class="fa-solid fa-droplet text-xs text-yellow-400"></i>
-                  Simulasi &amp; Sensor
-                </span>
-                <span class="text-[11px] font-mono text-neutral-400">Platform: Arduino</span>
-              </div>
-
-              <!-- Title -->
-              <h3
-                class="text-base sm:text-lg font-bold text-white hover:text-yellow-400 transition-colors leading-snug">
-                LAPORAN PRAKTIKUM SENSOR KELEMBAPAN TANAH MENGGUNAKAN SENSOR SOIL MOISTURE
-              </h3>
-
-              <!-- Description -->
-              <p class="text-neutral-400 text-sm leading-relaxed">
-                Simulasi dan perancangan alat pendeteksi kelembapan tanah menggunakan mikrokontroler ESP32 dan sensor
-                soil moisture pada platform arduino. Sistem dilengkapi peringatan dini melalui alarm buzzer dan
-                notifikasi otomatis menyalakan air.
-              </p>
-
-              <!-- Technical Explanation Breakdown -->
-              <div class="bg-black rounded-2xl p-4 border border-black-800 space-y-2.5 font-mono text-xs">
-                <p class="text-yellow-400 font-semibold flex items-center gap-2">
-                  <i class="fa-solid fa-circle-nodes"></i>
-                  Alur Kerja &amp; Arsitektur Sistem:
-                </p>
-                <ul class="space-y-2 text-neutral-300 text-[11px] leading-relaxed">
-                  <li class="flex items-start gap-2">
-                    <span class="text-yellow-400 font-bold">›</span>
-                    <span><strong>Akuisisi Data:</strong> Probe sensor kelembapan tanah mengukur resistansi kadar air
-                      secara analog dan diteruskan ke pin ADC ESP32.</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <span class="text-yellow-400 font-bold">›</span>
-                    <span><strong>Otomasi Aktuator:</strong> Mikrokontroler memicu modul relai untuk menyalakan pompa
-                      air secara otomatis saat kelembapan berada di bawah ambang batas minimum.</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <span class="text-yellow-400 font-bold">›</span>
-                    <span><strong>Peringatan Terpadu:</strong> Mengaktifkan alarm audio via buzzer lokal serta
-                      mengirimkan notifikasi peringatan otomatis ke aplikasi Telegram pengguna via Bot API.</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Tags Footer -->
-            <div class="pt-5 mt-4 border-t border-black-800 flex flex-wrap gap-2 text-xs font-mono">
-              <span
-                class="px-2.5 py-1 rounded-md bg-black border border-black-750 text-yellow-400 font-bold">ESP32</span>
-              <span class="px-2.5 py-1 rounded-md bg-black border border-black-750 text-neutral-300">Sensor soil
-                moisture</span>
-              <span class="px-2.5 py-1 rounded-md bg-black border border-black-750 text-neutral-300">Buzzer</span>
-              <span
-                class="px-2.5 py-1 rounded-md bg-black border border-black-750 text-yellow-300 font-medium">Telegram</span>
-            </div>
-          </article>
-
-          <!-- ==================== PROYEK 2 ==================== -->
-          <article
-            class="project-card glow-card bg-black-900/90 rounded-3xl p-6 sm:p-8 border border-black-800 flex flex-col justify-between"
-            data-category="automotive">
-            <div class="space-y-4">
-              <!-- Header Badges -->
-              <div class="flex items-center justify-between gap-3">
-                <span
-                  class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-yellow-950/60 border border-yellow-500/30 text-yellow-400 text-xs font-mono font-bold">
-                  <i class="fa-solid fa-motorcycle text-xs text-yellow-400"></i>
-                  Smart Otomotif
-                </span>
-                <span class="text-[11px] font-mono text-neutral-400">Simulator: Wokwi</span>
-              </div>
-
-              <!-- Title -->
-              <h3
-                class="text-base sm:text-lg font-bold text-white hover:text-yellow-400 transition-colors leading-snug">
-                RANCANG BANGUN SMART RIDE MODE SYSTEM BERBASIS MICROKONTROLER UNTUK OPTIMASI RESPON THROTTLE MOTOR
-                LISTRIK
-              </h3>
-
-              <!-- Description -->
-              <p class="text-neutral-400 text-sm leading-relaxed">
-                Prototipe sistem manipulasi sensor throttle pada motor listrik sehingga gas pada motor dapat diatur
-                menjadi 3 mode (race, normal, dan rain), jadi pengguna bisa menyesuaikan kecepatan motor listrik sesuai
-                kebutuhannya.
-              </p>
-
-              <!-- Technical Explanation Breakdown -->
-              <div class="bg-black rounded-2xl p-4 border border-black-800 space-y-2.5 font-mono text-xs">
-                <p class="text-yellow-400 font-semibold flex items-center gap-2">
-                  <i class="fa-solid fa-sliders"></i>
-                  Penerapan Logika Kendali 3-Mode:
-                </p>
-                <ul class="space-y-2 text-neutral-300 text-[11px] leading-relaxed">
-                  <li class="flex items-start gap-2">
-                    <span class="text-yellow-400 font-bold">›</span>
-                    <span><strong>Manipulasi Sinyal Throttle:</strong> Membaca tegangan analog dari throttle grip motor
-                      lalu memetakannya kembali (mapping) sesuai profil algoritma mode aktif.</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <span class="text-yellow-400 font-bold">›</span>
-                    <span><strong>Rincian Karakteristik Mode:</strong>
-                      <br><span class="text-yellow-400 font-bold">• Race Mode:</span> Akselerasi agresif 100% respons
-                      gas untuk performa puncak.
-                      <br><span class="text-yellow-300 font-semibold">• Normal Mode:</span> Karakter seimbang untuk
-                      efisiensi baterai harian.
-                      <br><span class="text-neutral-400">• Rain Mode:</span> Pembatasan respons akselerasi secara lembut
-                      untuk mencegah selip roda di jalan basah.</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <span class="text-yellow-400 font-bold">›</span>
-                    <span><strong>Verifikasi Simulasi:</strong> Diuji secara komprehensif menggunakan simulator
-                      mikrokontroler Wokwi dengan pemodelan Arduino Nano.</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Tags Footer -->
-            <div class="pt-5 mt-4 border-t border-black-800 flex flex-wrap gap-2 text-xs font-mono">
-              <span class="px-2.5 py-1 rounded-md bg-black border border-black-750 text-yellow-400 font-bold">Smart
-                otomotif</span>
-              <span class="px-2.5 py-1 rounded-md bg-black border border-black-750 text-neutral-300">Otomasi</span>
-              <span class="px-2.5 py-1 rounded-md bg-black border border-black-750 text-neutral-300">Wokwi</span>
-              <span class="px-2.5 py-1 rounded-md bg-black border border-black-750 text-yellow-300 font-medium">Arduino
-                Nano</span>
-            </div>
-          </article>
-
-          <!-- ==================== PROYEK 3 ==================== -->
-          <article
-            class="project-card glow-card bg-black-900/90 rounded-3xl p-6 sm:p-8 border border-black-800 flex flex-col justify-between"
-            data-category="assistive">
-            <div class="space-y-4">
-              <!-- Header Badges -->
-              <div class="flex items-center justify-between gap-3">
-                <span
-                  class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-yellow-950/60 border border-yellow-500/30 text-yellow-400 text-xs font-mono font-bold">
-                  <i class="fa-solid fa-radar text-xs text-yellow-400"></i>
-                  Assistive IoT
-                </span>
-                <span class="text-[11px] font-mono text-yellow-400 font-semibold">AM TECHNOLOGY Jogja</span>
-              </div>
-
-              <!-- Title -->
-              <h3
-                class="text-base sm:text-lg font-bold text-white hover:text-yellow-400 transition-colors leading-snug">
-                Sistem pendeteksi benda untuk orang buta dengan sensor lidar dan buzzer
-              </h3>
-
-              <!-- Description -->
-              <p class="text-neutral-400 text-sm leading-relaxed">
-                Pengembangan solusi Internet of Things bersama AM TECHNOLOGY Jogja, meliputi perancangan sistem
-                pendeteksi benda dan lingkungan untuk mendukung teman2 penyandang tunanetra, dengan sistem memanfaatkan
-                sensor lidar dan mengirimkan suara melalui buzzer.
-              </p>
-
-              <!-- Technical Explanation Breakdown -->
-              <div class="bg-black rounded-2xl p-4 border border-black-800 space-y-2.5 font-mono text-xs">
-                <p class="text-yellow-400 font-semibold flex items-center gap-2">
-                  <i class="fa-solid fa-hands-holding-circle"></i>
-                  Implementasi &amp; Teknologi Asistif:
-                </p>
-                <ul class="space-y-2 text-neutral-300 text-[11px] leading-relaxed">
-                  <li class="flex items-start gap-2">
-                    <span class="text-yellow-400 font-bold">›</span>
-                    <span><strong>Kolaborasi Industri:</strong> Dikembangkan bersama tim startup IoT AM TECHNOLOGY Jogja
-                      sebagai solusi teknologi asistif berdampak sosial nyata.</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <span class="text-yellow-400 font-bold">›</span>
-                    <span><strong>Sensor LiDAR:</strong> Menggunakan transmisi sinar laser optik LiDAR untuk memindai
-                      kontur dan halangan fisik dengan tingkat presisi tinggi dan latensi instan.</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <span class="text-yellow-400 font-bold">›</span>
-                    <span><strong>Umpan Balik Akustik:</strong> Frekuensi dan interval bunyi buzzer berubah otomatis
-                      menyesuaikan jarak halangan, memandu teman-teman tunanetra secara intuitif saat berjalan.</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Tags Footer -->
-            <div class="pt-5 mt-4 border-t border-black-800 flex flex-wrap gap-2 text-xs font-mono">
-              <span class="px-2.5 py-1 rounded-md bg-black border border-black-750 text-yellow-400 font-bold">AM
-                TECHNOLOGY Jogja</span>
-              <span class="px-2.5 py-1 rounded-md bg-black border border-black-750 text-neutral-300">Lidar</span>
-              <span class="px-2.5 py-1 rounded-md bg-black border border-black-750 text-neutral-300">Raspberry Pi</span>
-              <span
-                class="px-2.5 py-1 rounded-md bg-black border border-black-750 text-yellow-300 font-medium">IoT</span>
-            </div>
-          </article>
-
-          <!-- ==================== PROYEK 4 ==================== -->
-          <article
-            class="project-card glow-card bg-black-900/90 rounded-3xl p-6 sm:p-8 border border-black-800 flex flex-col justify-between"
-            data-category="embedded">
-            <div class="space-y-4">
-              <!-- Header Badges -->
-              <div class="flex items-center justify-between gap-3">
-                <span
-                  class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-yellow-950/60 border border-yellow-500/30 text-yellow-400 text-xs font-mono font-bold">
-                  <i class="fa-solid fa-tv text-xs text-yellow-400"></i>
-                  Web &amp; Server IoT
-                </span>
-                <span class="text-[11px] font-mono text-neutral-400">ESP32 Server</span>
-              </div>
-
-              <!-- Title -->
-              <h3
-                class="text-base sm:text-lg font-bold text-white hover:text-yellow-400 transition-colors leading-snug">
-                Rangkaian monitoring jadwal sholat mushola berbasis web dengan esp32 sebagai server
-              </h3>
-
-              <!-- Description -->
-              <p class="text-neutral-400 text-sm leading-relaxed">
-                Pemodelan dan simulasi rangkaian IoT menggunakan kombinasi smart tv dengan memanfaatkan esp 32 sebagai
-                penghubung dengan server dan mengambil signal dari wifi secara jauh atau online, dan bisa menampilkan
-                jadwal sholat secara real time.
-              </p>
-
-              <!-- Technical Explanation Breakdown -->
-              <div class="bg-black rounded-2xl p-4 border border-black-800 space-y-2.5 font-mono text-xs">
-                <p class="text-yellow-400 font-semibold flex items-center gap-2">
-                  <i class="fa-solid fa-server"></i>
-                  Arsitektur Web Server &amp; Smart Display:
-                </p>
-                <ul class="space-y-2 text-neutral-300 text-[11px] leading-relaxed">
-                  <li class="flex items-start gap-2">
-                    <span class="text-yellow-400 font-bold">›</span>
-                    <span><strong>ESP32 Web Server:</strong> Mikrokontroler ESP32 difungsikan mandiri sebagai web server
-                      lokal yang menangani sinkronisasi data jadwal waktu sholat secara online via koneksi Wi-Fi.</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <span class="text-yellow-400 font-bold">›</span>
-                    <span><strong>Visualisasi Smart TV &amp; LCD:</strong> Antarmuka web yang disajikan dirancang
-                      responsif untuk ditampilkan pada Smart TV atau panel display mushola secara
-                      <em>real-time</em>.</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <span class="text-yellow-400 font-bold">›</span>
-                    <span><strong>Desain Perangkat Keras:</strong> Mencakup perancangan tata letak jalur PCB kustom,
-                      integrasi display LCD, dan dukungan aplikasi Android Studio untuk monitoring konfigurasi.</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Tags Footer -->
-            <div class="pt-5 mt-4 border-t border-black-800 flex flex-wrap gap-2 text-xs font-mono">
-              <span
-                class="px-2.5 py-1 rounded-md bg-black border border-black-750 text-yellow-400 font-bold">ESP32</span>
-              <span class="px-2.5 py-1 rounded-md bg-black border border-black-750 text-neutral-300">IoT</span>
-              <span class="px-2.5 py-1 rounded-md bg-black border border-black-750 text-neutral-300">Android
-                Studio</span>
-              <span class="px-2.5 py-1 rounded-md bg-black border border-black-750 text-yellow-400 font-bold">PCB</span>
-              <span class="px-2.5 py-1 rounded-md bg-black border border-black-750 text-neutral-300">LCD</span>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== 5. TECH STACK & ARSENAL ==================== -->
-    <section id="keahlian" class="py-20 relative bg-black">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <div class="text-center max-w-2xl mx-auto mb-14">
-          <div
-            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black-900 text-yellow-400 font-mono text-xs mb-3 border border-yellow-500/30">
-            <i class="fa-solid fa-cubes text-yellow-400"></i>
-            ARSENAL TEKNOLOGI
-          </div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Keahlian Teknis &amp; Ekosistem Kerja
-          </h2>
-          <p class="text-neutral-400 text-sm mt-2">
-            Perpaduan keahlian pemrograman hardware tingkat rendah dengan antarmuka web modern dan manajemen basis data.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-          <!-- Category 1: Embedded Hardware & IoT -->
-          <div class="bg-black-900/90 rounded-3xl p-6 border border-black-800 glow-card space-y-4">
-            <div class="flex items-center gap-3 border-b border-black-800 pb-4">
-              <div
-                class="w-10 h-10 rounded-xl bg-yellow-500/10 text-yellow-400 flex items-center justify-center text-lg border border-yellow-500/20">
-                <i class="fa-solid fa-microchip"></i>
-              </div>
-              <div>
-                <h3 class="font-bold text-white text-base">Embedded &amp; IoT</h3>
-                <p class="text-xs font-mono text-neutral-400">Microcontroller &amp; Hardware</p>
-              </div>
-            </div>
-
-            <ul class="space-y-3 font-mono text-xs">
-              <li class="p-2.5 rounded-xl bg-black border border-black-800 flex items-center justify-between">
-                <span class="text-white font-semibold">ESP32 &amp; ESP8266</span>
-                <span class="text-yellow-400 font-bold">Wi-Fi / BT / Server</span>
-              </li>
-              <li class="p-2.5 rounded-xl bg-black border border-black-800 flex items-center justify-between">
-                <span class="text-white font-semibold">Bahasa C / C++</span>
-                <span class="text-yellow-300">Firmware Logic</span>
-              </li>
-              <li class="p-2.5 rounded-xl bg-black border border-black-800 flex items-center justify-between">
-                <span class="text-white font-semibold">Sensor Interfacing</span>
-                <span class="text-yellow-400">Soil Moisture &amp; LiDAR</span>
-              </li>
-              <li class="p-2.5 rounded-xl bg-black border border-black-800 flex items-center justify-between">
-                <span class="text-white font-semibold">Wokwi &amp; Arduino IDE</span>
-                <span class="text-yellow-300 font-bold">Simulasi &amp; Flash</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Category 2: Web Interface & Dashboard -->
-          <div class="bg-black-900/90 rounded-3xl p-6 border border-black-800 glow-card space-y-4">
-            <div class="flex items-center gap-3 border-b border-black-800 pb-4">
-              <div
-                class="w-10 h-10 rounded-xl bg-yellow-500/10 text-yellow-400 flex items-center justify-center text-lg border border-yellow-500/20">
-                <i class="fa-solid fa-laptop-code"></i>
-              </div>
-              <div>
-                <h3 class="font-bold text-white text-base">Web Monitoring</h3>
-                <p class="text-xs font-mono text-neutral-400">Dashboard &amp; Telemetri</p>
-              </div>
-            </div>
-
-            <ul class="space-y-3 font-mono text-xs">
-              <li class="p-2.5 rounded-xl bg-black border border-black-800 flex items-center justify-between">
-                <span class="text-white font-semibold">HTML5 &amp; CSS3</span>
-                <span class="text-yellow-400 font-bold">Struktur Semantik</span>
-              </li>
-              <li class="p-2.5 rounded-xl bg-black border border-black-800 flex items-center justify-between">
-                <span class="text-white font-semibold">JavaScript (ES6+)</span>
-                <span class="text-yellow-300">DOM &amp; Async Fetch</span>
-              </li>
-              <li class="p-2.5 rounded-xl bg-black border border-black-800 flex items-center justify-between">
-                <span class="text-white font-semibold">Tailwind CSS</span>
-                <span class="text-yellow-400 font-bold">Modern Layouting</span>
-              </li>
-              <li class="p-2.5 rounded-xl bg-black border border-black-800 flex items-center justify-between">
-                <span class="text-white font-semibold">Chart &amp; Real-time Gauge</span>
-                <span class="text-yellow-300 font-bold">Visualisasi Data</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Category 3: Cloud, Database & Protocol -->
-          <div class="bg-black-900/90 rounded-3xl p-6 border border-black-800 glow-card space-y-4">
-            <div class="flex items-center gap-3 border-b border-black-800 pb-4">
-              <div
-                class="w-10 h-10 rounded-xl bg-yellow-500/10 text-yellow-400 flex items-center justify-center text-lg border border-yellow-500/20">
-                <i class="fa-solid fa-network-wired"></i>
-              </div>
-              <div>
-                <h3 class="font-bold text-white text-base">Cloud &amp; Integrasi</h3>
-                <p class="text-xs font-mono text-neutral-400">Database &amp; Transmisi</p>
-              </div>
-            </div>
-
-            <ul class="space-y-3 font-mono text-xs">
-              <li class="p-2.5 rounded-xl bg-black border border-black-800 flex items-center justify-between">
-                <span class="text-white font-semibold">Google Firebase</span>
-                <span class="text-yellow-400 font-bold">Realtime Database</span>
-              </li>
-              <li class="p-2.5 rounded-xl bg-black border border-black-800 flex items-center justify-between">
-                <span class="text-white font-semibold">SQL / Local DB</span>
-                <span class="text-yellow-300">Data Logging</span>
-              </li>
-              <li class="p-2.5 rounded-xl bg-black border border-black-800 flex items-center justify-between">
-                <span class="text-white font-semibold">Telegram Bot API</span>
-                <span class="text-yellow-400 font-bold">Alarm Otomatis</span>
-              </li>
-              <li class="p-2.5 rounded-xl bg-black border border-black-800 flex items-center justify-between">
-                <span class="text-white font-semibold">Git &amp; GitHub</span>
-                <span class="text-neutral-400">Version Control</span>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ==================== 6. PROFIL & LATAR BELAKANG PENDIDIKAN ==================== -->
-    <section id="tentang" class="py-20 bg-black-950/80 border-t border-black-800 relative">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-
-          <!-- Avatar & Status Panel (4 Cols) -->
-          <div class="lg:col-span-4 flex flex-col items-center text-center">
-            <div
-              class="w-48 h-48 sm:w-56 sm:h-56 rounded-3xl p-1 bg-gradient-to-tr from-yellow-300 via-yellow-400 to-amber-500 shadow-2xl shadow-yellow-500/20 mb-5 relative group">
-              <div
-                class="w-full h-full rounded-[22px] bg-black relative overflow-hidden group">
-                <img src="foto-profil.jpeg" alt="Yogo Prasetyo" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent flex flex-col justify-end p-4 text-center">
-                  <h3 class="text-white font-bold text-base drop-shadow-md">Yogo Prasetyo</h3>
-                  <p class="text-xs font-mono text-yellow-400 font-semibold drop-shadow-md">D3 Teknologi Informasi</p>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black-900 border border-yellow-500/40 text-yellow-400 text-xs font-mono font-bold">
-              <span class="w-2 h-2 rounded-full bg-yellow-400 animate-ping"></span>
-              TERBUKA UNTUK KOLABORASI / KERJA
-            </div>
-          </div>
-
-          <!-- Narrative Journey (8 Cols) -->
-          <div class="lg:col-span-8 space-y-6">
-            <div
-              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black-900 text-neutral-300 font-mono text-xs border border-black-800">
-              <i class="fa-solid fa-graduation-cap text-yellow-400"></i>
-              POLITEKNIK NEGERI MADIUN &amp; INDUSTRI
-            </div>
-
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-              Menjembatani Dunia Fisik &amp; Digital Melalui Solusi Otomasi
-            </h2>
-
-            <p class="text-neutral-400 text-sm sm:text-base leading-relaxed">
-              Sebagai mahasiswa tingkat akhir pada <strong>Program Studi D3 Teknologi Informasi, Politeknik Negeri
-                Madiun</strong>, fokus riset dan minat saya tertuju pada implementasi <em>Internet of Things (IoT)</em>.
-            </p>
-
-            <p class="text-neutral-400 text-sm sm:text-base leading-relaxed">
-              Melalui pengalaman magang di startup IoT <strong>AM TECHNOLOGY Jogja</strong> serta pengerjaan berbagai
-              proyek praktikum mikrokontroler (seperti sistem pendeteksi tunanetra berbasis LiDAR, throttle motor
-              listrik 3-mode, serta monitoring kelembapan tanah otomatis), saya terbiasa memecahkan masalah nyata dengan
-              mengombinasikan sensor cerdas, aktuator otomatis, dan sistem web monitoring.
-            </p>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 font-mono text-xs">
-              <div class="p-4 rounded-2xl bg-black-900 border border-black-800">
-                <span class="text-yellow-400 font-bold block mb-1">📍 Kampus Asal</span>
-                <span class="text-neutral-300">Politeknik Negeri Madiun (PNM), Jawa Timur</span>
-              </div>
-              <div class="p-4 rounded-2xl bg-black-900 border border-black-800">
-                <span class="text-yellow-400 font-bold block mb-1">💼 Pengalaman Magang</span>
-                <span class="text-neutral-300">AM TECHNOLOGY Jogja (IoT Solutions)</span>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ==================== 7. INTERACTIVE WHATSAPP MESSAGE BUILDER (CALL TO ACTION) ==================== -->
-    <section id="kontak"
-      class="py-24 bg-gradient-to-b from-black via-black-950 to-black border-t border-black-800 relative overflow-hidden">
-      <!-- Glow ambient -->
-      <div
-        class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-yellow-500/10 rounded-full blur-3xl pointer-events-none">
-      </div>
-
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-
-        <!-- Header -->
-        <div
-          class="w-16 h-16 rounded-2xl bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 flex items-center justify-center text-3xl mx-auto mb-6 shadow-xl shadow-yellow-500/10">
-          <i class="fa-brands fa-whatsapp text-yellow-400"></i>
-        </div>
-
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
-          Mari Terhubung &amp; Berdiskusi
-        </h2>
-
-        <p class="text-neutral-400 text-sm sm:text-base max-w-xl mx-auto mb-10 leading-relaxed">
-          Pilih topik yang ingin Anda diskusikan di bawah ini. Pesan WhatsApp akan diformat secara otomatis dan siap
-          dikirimkan langsung ke nomor saya!
-        </p>
-
-        <!-- INTERACTIVE MESSAGE CUSTOMIZER WIDGET -->
-        <div
-          class="bg-black-900/95 rounded-3xl p-6 sm:p-8 border border-yellow-500/30 text-left shadow-2xl max-w-2xl mx-auto backdrop-blur-xl">
-
-          <label class="block text-xs font-mono text-yellow-400 uppercase tracking-wider mb-3 font-bold">
-            1. Pilih Topik Diskusi:
-          </label>
-
-          <!-- 4 Topic Options (Pills) -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-5 font-mono text-xs" id="topic-selector">
-            <button
-              class="topic-btn active p-3 rounded-xl bg-black border border-yellow-400 text-yellow-400 font-bold flex items-center gap-2 transition-all shadow-md shadow-yellow-500/20"
-              data-topic="iot-collab">
-              <i class="fa-solid fa-microchip text-yellow-400"></i>
-              <span>Proyek / Kolaborasi IoT</span>
-            </button>
-            <button
-              class="topic-btn p-3 rounded-xl bg-black border border-black-800 text-neutral-300 hover:border-yellow-500/50 flex items-center gap-2 transition-all"
-              data-topic="web-monitoring">
-              <i class="fa-solid fa-chart-line text-yellow-400"></i>
-              <span>Web Dashboard Monitoring</span>
-            </button>
-            <button
-              class="topic-btn p-3 rounded-xl bg-black border border-black-800 text-neutral-300 hover:border-yellow-500/50 flex items-center gap-2 transition-all"
-              data-topic="career">
-              <i class="fa-solid fa-briefcase text-yellow-400"></i>
-              <span>Peluang Kerja / Magang</span>
-            </button>
-            <button
-              class="topic-btn p-3 rounded-xl bg-black border border-black-800 text-neutral-300 hover:border-yellow-500/50 flex items-center gap-2 transition-all"
-              data-topic="general">
-              <i class="fa-solid fa-mug-hot text-yellow-400"></i>
-              <span>Tanya / Diskusi Santai</span>
-            </button>
-          </div>
-
-          <!-- Input Nama Pengirim (Opsional) -->
-          <div class="mb-5">
-            <label class="block text-xs font-mono text-neutral-400 mb-1.5" for="sender-name">
-              2. Nama Anda / Instansi (Opsional):
-            </label>
-            <input type="text" id="sender-name" placeholder="Contoh: Budi Santoso / PT. Inovasi Cerdas"
-              class="w-full px-4 py-2.5 rounded-xl bg-black border border-black-800 text-white placeholder-neutral-600 font-mono text-xs focus:outline-none focus:border-yellow-400 transition-colors">
-          </div>
-
-          <!-- Live WhatsApp Message Preview -->
-          <div class="mb-6">
-            <div class="flex justify-between items-center text-[11px] font-mono text-neutral-400 mb-1.5">
-              <span>Preview Pesan Otomatis:</span>
-              <span class="text-yellow-400 font-bold">Ready to Send</span>
-            </div>
-            <div id="wa-preview"
-              class="p-3.5 rounded-xl bg-black border border-black-800 text-neutral-200 font-mono text-xs leading-relaxed italic">
-              "Halo Yogo Prasetyo, saya melihat portofolio Anda dan tertarik berdiskusi mengenai proyek kolaborasi
-              teknologi IoT dan firmware sensor."
-            </div>
-          </div>
-
-          <!-- Action Buttons -->
-          <div class="flex flex-col sm:flex-row gap-3">
-            <a id="wa-send-btn"
-              href="https://wa.me/6288210921402?text=Halo%20Yogo%20Prasetyo,%20saya%20melihat%20portofolio%20Anda%20dan%20tertarik%20berdiskusi%20mengenai%20proyek%20kolaborasi%20teknologi%20IoT%20dan%20firmware%20sensor."
-              target="_blank" rel="noopener noreferrer"
-              class="flex-1 py-3.5 px-6 rounded-xl font-black text-sm text-black bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-400 hover:scale-[1.02] shadow-xl shadow-yellow-500/25 transition-all flex items-center justify-center gap-2">
-              <i class="fa-brands fa-whatsapp text-lg text-black font-bold"></i>
-              <span>Kirim via WhatsApp</span>
-            </a>
-            <button id="copy-phone-btn"
-              class="py-3.5 px-5 rounded-xl bg-black hover:bg-black-800 text-yellow-400 border border-black-800 text-xs font-mono font-bold flex items-center justify-center gap-2 transition-all">
-              <i class="fa-solid fa-copy"></i>
-              <span id="copy-btn-text">Salin Nomor</span>
-            </button>
-          </div>
-
-        </div>
-
-        <!-- Direct Contact Footer Details -->
-        <div class="mt-8 flex flex-wrap items-center justify-center gap-6 text-xs font-mono text-neutral-400">
-          <span class="flex items-center gap-2">
-            <i class="fa-solid fa-phone text-yellow-400"></i>
-            +62 882-1092-1402
-          </span>
-          <span class="flex items-center gap-2">
-            <i class="fa-solid fa-location-dot text-yellow-400"></i>
-            Madiun, Jawa Timur, Indonesia
-          </span>
-        </div>
-
-      </div>
-    </section>
-  </main>
-
-  <!-- ==================== 8. FOOTER ==================== -->
-  <footer class="py-8 bg-black border-t border-black-800 text-center font-mono text-xs text-neutral-400">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
-        <span>&copy; 2026 <strong>Yogo Prasetyo</strong> · D3 TI Politeknik Negeri Madiun</span>
-      </div>
-      <p class="text-neutral-400">
-        Tugas Portofolio Individu: <em>Digital Kewirausahaan IT</em>
-      </p>
-    </div>
-  </footer>
-
-  <!-- ==================== INTERACTIVE JAVASCRIPT LOGIC ==================== -->
+  <!-- ============================================================ -->
+  <!-- JAVASCRIPT FUNGSIONAL -->
+  <!-- ============================================================ -->
   <script>
-    // --- 1. Audio Synthesizer Engine (Web Audio API) ---
-    let audioCtx = null;
-    let isSoundOn = false;
+    // Inisialisasi Lucide Icons
+    lucide.createIcons();
 
-    function initAudio() {
-      if (!audioCtx) {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      }
-      if (audioCtx.state === 'suspended') {
-        audioCtx.resume();
-      }
-    }
+    // 1. Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuOpenIcon = document.getElementById('menuOpenIcon');
+    const menuCloseIcon = document.getElementById('menuCloseIcon');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
-    function playTone(freq = 800, type = 'sine', duration = 0.08) {
-      if (!isSoundOn) return;
-      try {
-        initAudio();
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-        osc.type = type;
-        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-        gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
-        osc.start();
-        osc.stop(audioCtx.currentTime + duration);
-      } catch (e) {
-        console.error(e);
-      }
-    }
-
-    // Toggle Audio Mode
-    const soundToggleBtn = document.getElementById('sound-toggle-btn');
-    const soundIcon = document.getElementById('sound-icon');
-    const soundLabel = document.getElementById('sound-label');
-
-    soundToggleBtn.addEventListener('click', () => {
-      isSoundOn = !isSoundOn;
-      if (isSoundOn) {
-        initAudio();
-        soundIcon.className = 'fa-solid fa-volume-high text-yellow-400';
-        soundLabel.textContent = 'Audio: ON';
-        playTone(900, 'triangle', 0.1);
-      } else {
-        soundIcon.className = 'fa-solid fa-volume-xmark text-neutral-500';
-        soundLabel.textContent = 'Audio: OFF';
-      }
-    });
-
-    // --- 2. Live Telemetry Ticker Jitter Simulation ---
-    setInterval(() => {
-      // Fluctuating Temp
-      const temp = (28.0 + (Math.random() * 0.8 - 0.4)).toFixed(1);
-      document.getElementById('ticker-temp').textContent = temp + '°C';
-
-      // Fluctuating Ping
-      const ping = Math.floor(16 + Math.random() * 8);
-      document.getElementById('ticker-ping').textContent = ping + 'ms';
-
-      // Fluctuating Wi-Fi RSSI
-      const wifi = -50 - Math.floor(Math.random() * 7);
-      document.getElementById('ticker-wifi').textContent = wifi + ' dBm';
-    }, 2800);
-
-    // --- 3. Typing Effect in Hero ---
-    const typingPhrases = [
-      'IoT Systems & Firmware Engineer',
-      'ESP32 & Microcontroller Programmer',
-      'Telemetry & Web Dashboard Builder',
-      'Automation & Sensor Interfacing'
-    ];
-    let phraseIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    const typedElement = document.getElementById('typed-text');
-
-    function typeLoop() {
-      const currentPhrase = typingPhrases[phraseIndex];
-      if (isDeleting) {
-        charIndex--;
-        typedElement.textContent = currentPhrase.substring(0, charIndex);
-      } else {
-        charIndex++;
-        typedElement.textContent = currentPhrase.substring(0, charIndex);
-      }
-
-      let speed = isDeleting ? 40 : 80;
-      if (!isDeleting && charIndex === currentPhrase.length) {
-        speed = 1800; // Pause at end
-        isDeleting = true;
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        phraseIndex = (phraseIndex + 1) % typingPhrases.length;
-        speed = 400;
-      }
-      setTimeout(typeLoop, speed);
-    }
-    typeLoop();
-
-    // --- 4. Interactive Microcontroller Deck (Soil Slider, LED, Buzzer) ---
-    const soilSlider = document.getElementById('soil-slider');
-    const sliderLabel = document.getElementById('slider-label');
-    const hwSoilVal = document.getElementById('hw-soil-val');
-    const hwSoilBar = document.getElementById('hw-soil-bar');
-    const hwPumpStatus = document.getElementById('hw-pump-status');
-    const hwBuzzerStatus = document.getElementById('hw-buzzer-status');
-
-    soilSlider.addEventListener('input', (e) => {
-      const val = parseInt(e.target.value);
-      sliderLabel.textContent = val + '%';
-      hwSoilBar.style.width = val + '%';
-      document.getElementById('ticker-soil').textContent = val + '%';
-
-      if (val < 40) {
-        hwSoilVal.textContent = val + '% (KERING - KRITIS)';
-        hwSoilVal.className = 'text-yellow-300 font-extrabold animate-pulse';
-        hwSoilBar.className = 'h-full bg-yellow-300 transition-all duration-300';
-        hwPumpStatus.textContent = 'AKTIF (MENYIRAM AIR)';
-        hwPumpStatus.className = 'text-yellow-400 font-extrabold animate-pulse';
-        hwBuzzerStatus.textContent = 'BEEP ALARM BERBUNYI';
-        hwBuzzerStatus.className = 'text-yellow-400 font-bold';
-        playTone(1200, 'sawtooth', 0.05);
-      } else if (val > 80) {
-        hwSoilVal.textContent = val + '% (SANGAT BASAH)';
-        hwSoilVal.className = 'text-yellow-400 font-bold';
-        hwSoilBar.className = 'h-full bg-yellow-400 transition-all duration-300';
-        hwPumpStatus.textContent = 'STANDBY (MATI)';
-        hwPumpStatus.className = 'text-neutral-400 font-semibold';
-        hwBuzzerStatus.textContent = 'SENYAP';
-        hwBuzzerStatus.className = 'text-neutral-400';
-      } else {
-        hwSoilVal.textContent = val + '% (OPTIMAL/LEMBAP)';
-        hwSoilVal.className = 'text-yellow-400 font-bold';
-        hwSoilBar.className = 'h-full bg-yellow-400 transition-all duration-300';
-        hwPumpStatus.textContent = 'STANDBY (NORMAL)';
-        hwPumpStatus.className = 'text-neutral-400 font-semibold';
-        hwBuzzerStatus.textContent = 'SENYAP';
-        hwBuzzerStatus.className = 'text-neutral-400';
-      }
-    });
-
-    // Toggle LED D2
-    const btnToggleLed = document.getElementById('btn-toggle-led');
-    const hwLed = document.getElementById('hw-led');
-    const hwLedText = document.getElementById('hw-led-text');
-    let isLedOn = false;
-
-    btnToggleLed.addEventListener('click', () => {
-      isLedOn = !isLedOn;
-      playTone(isLedOn ? 1000 : 600, 'square', 0.07);
-      if (isLedOn) {
-        hwLed.className = 'w-2.5 h-2.5 rounded-full bg-yellow-400 animate-pulse shadow-lg shadow-yellow-400/80';
-        hwLedText.textContent = 'LED D2: HIGH (ON)';
-        hwLedText.className = 'text-[10px] font-mono text-yellow-400 font-bold';
-      } else {
-        hwLed.className = 'w-2.5 h-2.5 rounded-full bg-neutral-800';
-        hwLedText.textContent = 'LED D2: LOW (OFF)';
-        hwLedText.className = 'text-[10px] font-mono text-neutral-400';
-      }
-    });
-
-    // Test Buzzer Tone
-    const btnTestBuzzer = document.getElementById('btn-test-buzzer');
-    btnTestBuzzer.addEventListener('click', () => {
-      hwBuzzerStatus.textContent = 'TESTING BUZZER (1.4 kHz)';
-      hwBuzzerStatus.className = 'text-yellow-400 font-bold';
-      playTone(1400, 'sawtooth', 0.25);
-      setTimeout(() => {
-        if (parseInt(soilSlider.value) >= 40) {
-          hwBuzzerStatus.textContent = 'SENYAP';
-          hwBuzzerStatus.className = 'text-neutral-400';
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const isOpen = !mobileMenu.classList.contains('hidden');
+        if (isOpen) {
+          mobileMenu.classList.add('hidden');
+          menuOpenIcon.classList.remove('hidden');
+          menuCloseIcon.classList.add('hidden');
+        } else {
+          mobileMenu.classList.remove('hidden');
+          menuOpenIcon.classList.add('hidden');
+          menuCloseIcon.classList.remove('hidden');
         }
-      }, 800);
-    });
-
-    // --- 5. Project Category Filter ---
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        playTone(850, 'sine', 0.05);
-        filterBtns.forEach(b => {
-          b.className = 'filter-btn px-4 py-2 rounded-lg bg-black-900 hover:bg-black-800 text-neutral-300 border border-black-800 hover:border-yellow-500/50 transition-all font-semibold';
-        });
-        btn.className = 'filter-btn active px-4 py-2 rounded-lg bg-yellow-400 text-black font-extrabold transition-all';
-
-        const filter = btn.getAttribute('data-filter');
-        projectCards.forEach(card => {
-          const category = card.getAttribute('data-category');
-          if (filter === 'all' || category === filter) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
-        });
       });
-    });
-
-    // --- 6. Interactive WhatsApp Message Generator ---
-    const topicBtns = document.querySelectorAll('.topic-btn');
-    const senderNameInput = document.getElementById('sender-name');
-    const waPreview = document.getElementById('wa-preview');
-    const waSendBtn = document.getElementById('wa-send-btn');
-    const copyPhoneBtn = document.getElementById('copy-phone-btn');
-    const copyBtnText = document.getElementById('copy-btn-text');
-
-    const messageTemplates = {
-      'iot-collab': 'Halo Yogo Prasetyo, saya melihat portofolio Anda dan tertarik berdiskusi mengenai proyek kolaborasi teknologi IoT dan firmware sensor.',
-      'web-monitoring': 'Halo Yogo, saya tertarik dengan keahlian Anda dalam merancang antarmuka Web Dashboard monitoring data telemetri real-time.',
-      'career': 'Halo Yogo Prasetyo, kami melihat profil profesional Anda di bidang IoT & Web Dev dan ingin mendiskusikan peluang kerja/magang.',
-      'general': 'Halo Yogo, saya melihat karya portofolio Anda dan ingin berdiskusi santai seputar dunia IoT & perkuliahan IT.'
-    };
-
-    let selectedTopic = 'iot-collab';
-
-    function updateWhatsAppLink() {
-      let baseMsg = messageTemplates[selectedTopic];
-      const nameVal = senderNameInput.value.trim();
-      let fullMessage = '';
-
-      if (nameVal) {
-        fullMessage = `${baseMsg} (Dari: ${nameVal})`;
-      } else {
-        fullMessage = baseMsg;
-      }
-
-      waPreview.textContent = `"${fullMessage}"`;
-      const encodedMsg = encodeURIComponent(fullMessage);
-      waSendBtn.href = `https://wa.me/6288210921402?text=${encodedMsg}`;
     }
 
-    topicBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        playTone(950, 'sine', 0.05);
-        topicBtns.forEach(b => {
-          b.className = 'topic-btn p-3 rounded-xl bg-black border border-black-800 text-neutral-300 hover:border-yellow-500/50 flex items-center gap-2 transition-all';
-        });
-        btn.className = 'topic-btn active p-3 rounded-xl bg-black border border-yellow-400 text-yellow-400 font-bold flex items-center gap-2 transition-all shadow-md shadow-yellow-500/20';
-        selectedTopic = btn.getAttribute('data-topic');
-        updateWhatsAppLink();
-      });
-    });
-
-    senderNameInput.addEventListener('input', updateWhatsAppLink);
-
-    // Copy Phone Number
-    copyPhoneBtn.addEventListener('click', () => {
-      playTone(1100, 'square', 0.08);
-      navigator.clipboard.writeText('+6288210921402').then(() => {
-        copyBtnText.textContent = 'Nomor Tersalin! ✓';
-        setTimeout(() => {
-          copyBtnText.textContent = 'Salin Nomor';
-        }, 2200);
-      });
-    });
-
-    // --- 7. Mobile Menu Toggle ---
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    mobileBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    mobileMenu.querySelectorAll('a').forEach(link => {
+    mobileNavLinks.forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu.classList.add('hidden');
+        menuOpenIcon.classList.remove('hidden');
+        menuCloseIcon.classList.add('hidden');
       });
     });
-  </script>
-</body>
 
+    // 2. Interactive WhatsApp Builder State & Logic
+    let currentTopic = 'Jasa Proyek IoT';
+    const waNumber = '6288210921402';
+
+    const messageTemplates = {
+      'Jasa Proyek IoT': (name, detail) => {
+        const salam = name ? `Halo Mas Yogo, saya ${name}.` : 'Halo Mas Yogo,';
+        const catatan = detail ? `\n\nDetail proyek: ${detail}` : '';
+        return `${salam} Saya tertarik untuk konsultasi seputar Jasa Proyek IoT (ESP32/Arduino/Sensor). Apakah ada waktu luang untuk berdiskusi terkait kebutuhan proyek saya?${catatan}\n\nTerima kasih!`;
+      },
+      'Pembuatan Website': (name, detail) => {
+        const salam = name ? `Halo Mas Yogo, saya ${name}.` : 'Halo Mas Yogo,';
+        const catatan = detail ? `\n\nDetail website: ${detail}` : '';
+        return `${salam} Saya berencana membuat Website Profil / UMKM yang modern, cepat, dan responsif. Boleh minta info detail mengenai alur pengerjaan dan penawaran biayanya?${catatan}\n\nTerima kasih!`;
+      },
+      'Web Dashboard': (name, detail) => {
+        const salam = name ? `Halo Mas Yogo, saya ${name}.` : 'Halo Mas Yogo,';
+        const catatan = detail ? `\n\nKebutuhan dashboard: ${detail}` : '';
+        return `${salam} Saya membutuhkan pembuatan Web Dashboard & Monitoring Telemetri Real-Time (integrasi Firebase/sensor). Bisa bantu konsultasi terkait arsitekturnya?${catatan}\n\nTerima kasih!`;
+      },
+      'Diskusi Santai': (name, detail) => {
+        const salam = name ? `Halo Mas Yogo, salam kenal saya ${name}.` : 'Halo Mas Yogo, salam kenal!';
+        const catatan = detail ? `\n\nTopik obrolan: ${detail}` : '';
+        return `${salam} Saya ingin sharing dan diskusi santai seputar teknologi IoT, mikrokontroler, dan web development.${catatan}\n\nTerima kasih!`;
+      }
+    };
+
+    function setTopik(topic, buttonElement) {
+      currentTopic = topic;
+      
+      // Update styling pill buttons
+      const pills = document.querySelectorAll('.topic-pill');
+      pills.forEach(btn => {
+        btn.classList.remove('bg-sage-deep', 'text-white', 'border-sage-deep', 'shadow-sm');
+        btn.classList.add('bg-white', 'text-charcoal', 'border-[#D5CFC1]');
+      });
+
+      if (buttonElement) {
+        buttonElement.classList.remove('bg-white', 'text-charcoal', 'border-[#D5CFC1]');
+        buttonElement.classList.add('bg-sage-deep', 'text-white', 'border-sage-deep', 'shadow-sm');
+      }
+
+      updatePreviewPesan();
+    }
+
+    function pilihTopik(topic) {
+      const pills = document.querySelectorAll('.topic-pill');
+      pills.forEach(btn => {
+        if (btn.innerText.includes(topic)) {
+          setTopik(topic, btn);
+        }
+      });
+      // Scroll smooth ke section kontak
+      const kontakSec = document.getElementById('kontak');
+      if (kontakSec) {
+        kontakSec.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function updatePreviewPesan() {
+      const nama = document.getElementById('namaInput').value.trim();
+      const detail = document.getElementById('detailInput').value.trim();
+      const templateFn = messageTemplates[currentTopic] || messageTemplates['Jasa Proyek IoT'];
+      
+      const textMessage = templateFn(nama, detail);
+      
+      // Tampilkan di preview bubble
+      const previewEl = document.getElementById('previewText');
+      if (previewEl) {
+        previewEl.innerText = textMessage;
+      }
+
+      // Perbarui tautan WhatsApp
+      const sendWaBtn = document.getElementById('sendWaBtn');
+      if (sendWaBtn) {
+        const encodedText = encodeURIComponent(textMessage);
+        sendWaBtn.href = `https://wa.me/${waNumber}?text=${encodedText}`;
+      }
+    }
+
+    // 3. Salin Nomor WhatsApp ke Clipboard
+    function salinNomorWA() {
+      const textToCopy = "+6288210921402";
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        const copyText = document.getElementById('copyText');
+        const copyAlert = document.getElementById('copyAlert');
+        
+        copyText.innerText = "Tersalin!";
+        copyAlert.classList.remove('hidden');
+
+        setTimeout(() => {
+          copyText.innerText = "Salin";
+          copyAlert.classList.add('hidden');
+        }, 2500);
+      }).catch(err => {
+        console.error('Gagal menyalin:', err);
+      });
+    }
+
+    // 3b. Salin Pesan Preview saat membuka DM Instagram
+    function salinPesanUntukIG() {
+      const previewEl = document.getElementById('previewText');
+      const igNote = document.getElementById('igCopyNote');
+      if (previewEl && navigator.clipboard) {
+        navigator.clipboard.writeText(previewEl.innerText).then(() => {
+          if (igNote) {
+            igNote.classList.remove('hidden');
+            setTimeout(() => igNote.classList.add('hidden'), 4000);
+          }
+        }).catch(() => {});
+      }
+    }
+
+    // 4. Modal Portofolio Proyek Interaktif
+    const projectData = {
+      1: {
+        category: "AGRITECH & AUTOMATION",
+        title: "Sistem Kelembapan Tanah & Pompa Otomatis",
+        hardware: ["ESP32 Dev Module", "Capacitive Soil Moisture Sensor", "Single Channel Relay Module", "DC Mini Water Pump 5V", "Active Buzzer Alarm"],
+        software: ["Arduino IDE (C++)", "Telegram Bot API", "Wi-Fi Client Secure"],
+        desc: "Sistem monitoring agrikultur cerdas yang memantau tingkat kelembapan tanah secara kontinyu. Saat tanah berada di bawah persentase ambang batas kritis, ESP32 secara otonom mengaktifkan pompa relai air dan membunyikan alarm indikator. Selain itu, sistem mengirimkan telemetri langsung ke grup Telegram pemilik lahan beserta timestamp.",
+        highlights: "Otomasi 24/7 tanpa campur tangan manual, hemat air hingga 40%, notifikasi bot Telegram instan."
+      },
+      2: {
+        category: "ELECTRIC VEHICLE & SIMULATION",
+        title: "Smart Ride Mode Motor Listrik (3-Mode)",
+        hardware: ["Arduino Nano V3", "Potensiometer Throttle 0-5V", "PWM Motor Driver", "Multi-position Toggle Switch"],
+        software: ["Wokwi Simulator", "Arduino C/C++", "Algoritma Pemetaan Kurva Daya"],
+        desc: "Proyek rekayasa throttle motor listrik untuk menciptakan pengalaman berkendara yang aman dan hemat energi. Terdapat 3 mode berkendara yang dapat dipilih secara dinamis: Mode Rain (akselerasi halus & batas kecepatan aman saat basah), Mode Normal (torsi seimbang untuk harian), dan Mode Race (respons throttle instan & kurva daya maksimal).",
+        highlights: "Telah diuji di simulator sirkuit Wokwi dengan respons waktu di bawah 10ms dan perlindungan arus berlebih."
+      },
+      3: {
+        category: "AM TECHNOLOGY JOGJA • MAGANG INDUSTRI",
+        title: "Alat Bantu Tunanetra Berbasis LiDAR",
+        hardware: ["Raspberry Pi 4 Model B", "TF-Mini Plus LiDAR Sensor (ToF)", "Piezo Buzzer Modulator", "Power Bank 5V 3A"],
+        software: ["Raspberry Pi OS", "Python 3.10", "Serial UART Protocol", "Frekuensi Audio Feedback"],
+        desc: "Hasil kolaborasi magang industri di startup IoT AM TECHNOLOGY Jogja. Alat ini dirancang untuk mendeteksi objek dan rintangan di depan penyandang disabilitas netra dengan presisi tinggi menggunakan sensor Time-of-Flight (LiDAR). Sensor membaca jarak hingga 12 meter dan modul buzzer mengubah data jarak menjadi modulasi frekuensi suara (semakin dekat rintangan, semakin cepat bunyi 'beep').",
+        highlights: "Responsivitas tinggi terhadap objek tipis/gelap, akurasi hingga margin 1cm, desain portabel dan ergonomis."
+      },
+      4: {
+        category: "EMBEDDED WEB & CUSTOM PCB",
+        title: "Monitoring Jadwal Sholat Web Server ESP32",
+        hardware: ["ESP32 NodeMCU", "Desain Custom PCB Single Layer", "Modul RTC DS3231 Presisi", "Output HDMI / LCD TV Adapter"],
+        software: ["ESP32 AsyncWebServer", "HTML5 & Tailwind CSS Embedded", "SPIFFS / LittleFS", "Android Studio (Remote App)"],
+        desc: "Perangkat cerdas penyedia informasi waktu ibadah dan pengumuman masjid lokal. ESP32 diprogram bertindak sebagai Access Point dan Web Server lokal. Tampilan dashboard dapat dibuka langsung di layar Smart TV atau browser tanpa memerlukan koneksi internet eksternal. Admin masjid dapat merubah nama masjid, running text, dan kalibrasi waktu sholat secara nirkabel melalui aplikasi Android.",
+        highlights: "Tampilan responsif di Smart TV/LCD, konfigurasi nirkabel lewat Android Studio, PCB rapi dan tahan lama."
+      }
+    };
+
+    function bukaModalProyek(id) {
+      const data = projectData[id];
+      if (!data) return;
+
+      const modalEl = document.getElementById('projectModal');
+      const contentEl = document.getElementById('modalContent');
+
+      contentEl.innerHTML = `
+        <span class="font-mono text-xs font-bold text-terracotta bg-terracotta-light px-3 py-1 rounded-full uppercase">
+          ${data.category}
+        </span>
+        <h3 class="text-2xl font-extrabold text-charcoal mt-3 mb-4">
+          ${data.title}
+        </h3>
+        
+        <p class="text-sm sm:text-base text-sage-gray leading-relaxed mb-6">
+          ${data.desc}
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <div class="p-4 rounded-2xl bg-[#FAF8F5] border border-[#E7E2D5]">
+            <h4 class="font-mono text-xs font-bold text-charcoal uppercase mb-2 flex items-center gap-1.5">
+              <i class="fa-solid fa-microchip text-sage-dark"></i> Komponen Hardware:
+            </h4>
+            <ul class="text-xs text-sage-gray space-y-1.5">
+              ${data.hardware.map(item => `<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sage"></span>${item}</li>`).join('')}
+            </ul>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-[#FAF8F5] border border-[#E7E2D5]">
+            <h4 class="font-mono text-xs font-bold text-charcoal uppercase mb-2 flex items-center gap-1.5">
+              <i class="fa-solid fa-code text-terracotta"></i> Software &amp; Framework:
+            </h4>
+            <ul class="text-xs text-sage-gray space-y-1.5">
+              ${data.software.map(item => `<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span>${item}</li>`).join('')}
+            </ul>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-sage-soft/50 border border-sage/20 mb-6">
+          <span class="font-mono text-xs font-bold text-sage-deep block mb-1">Keunggulan Hasil Implementasi:</span>
+          <p class="text-xs text-charcoal">${data.highlights}</p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <button onclick="tutupModalProyek(); pilihTopik('${data.title.includes('Motor') ? 'Jasa Proyek IoT' : data.title.includes('Sholat') ? 'Web Dashboard' : 'Jasa Proyek IoT'}')" class="flex-1 py-3 px-5 rounded-full bg-terracotta text-white font-bold text-xs text-center shadow-warm hover:bg-terracotta-hover transition">
+            Konsultasikan Proyek Serupa via WhatsApp
+          </button>
+          <button onclick="tutupModalProyek()" class="py-3 px-5 rounded-full bg-[#F5F3EE] hover:bg-[#EAE5D9] text-charcoal font-bold text-xs transition">
+            Tutup
+          </button>
+        </div>
+      `;
+
+      modalEl.classList.remove('hidden');
+      modalEl.classList.add('flex');
+      lucide.createIcons();
+    }
+
+    function tutupModalProyek() {
+      const modalEl = document.getElementById('projectModal');
+      modalEl.classList.add('hidden');
+      modalEl.classList.remove('flex');
+    }
+
+    // Close modal on click outside
+    window.addEventListener('click', (e) => {
+      const modalEl = document.getElementById('projectModal');
+      if (e.target === modalEl) {
+        tutupModalProyek();
+      }
+    });
+
+    // Close modal on Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        tutupModalProyek();
+      }
+    });
+
+    // Jalankan inisialisasi awal pesan preview saat halaman termuat
+    window.addEventListener('DOMContentLoaded', () => {
+      updatePreviewPesan();
+    });
+  </script>
+
+</body>
 </html>
